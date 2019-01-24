@@ -1,0 +1,13 @@
+Package: music
+Type: Package
+Title: Musical scales, chords, progressions
+Version: 0.1.0
+Authors@R: person(given = "Efstathios D.", family = "Gennatas", role = c("aut", "cre", "cph"), email = "Efstathios.Gennatas@ucsf.edu")
+Author: Efstathios D. Gennatas [aut, cre, cph]
+Maintainer: Efstathios D. Gennatas <Efstathios.Gennatas@ucsf.edu>
+Description: Build, play, visualize musical scales, chords and chord progressions.
+Imports: graphics, utils, audio, crayon
+License: GPL (>=2)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
