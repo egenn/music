@@ -5,7 +5,7 @@
 #' Frequency to waveform
 #'
 #' @inheritParams playFreq
-#' @param frequency Float: Frequency to play
+#' @param frequency Float: Frequency to convert to waveform
 #' @param plot Logical: If TRUE, plot wave
 #' @export
 #' @author Efstathios D. Gennatas
