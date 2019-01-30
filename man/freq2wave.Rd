@@ -24,7 +24,7 @@ freq2wave(frequency, oscillator = c("sine", "square", "saw", "triangle"),
 \item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
 Deefault = 50 (Also helps prevent popping)}
 
-\item{plot}{Logical: If TRUE, plot wave}
+\item{plot}{Logical: If TRUE, plot wave(s) using \link{mplot}}
 }
 \description{
 Frequency to waveform
