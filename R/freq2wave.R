@@ -51,7 +51,8 @@ freq2wave <- function(frequency,
   if (plot) for (i in NCOL(wave)) mplot(wave[, i])
 
   # Return vector if only one frequency was input
-  if (n.freqs == 1) wave <- wave[, 1]
+  # if (n.freqs == 1) wave <- wave[, 1]
+  colnames(wave) <- names(frequency)
   wave
 
 } # music::freq2wave
