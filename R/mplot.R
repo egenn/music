@@ -14,6 +14,7 @@
 #' @param col.axis Color: Axes' color
 #' @param col.lab Color: Label color
 #' @param col.main Color: Title color
+#' @param col.legend Color: Legend color
 #' @param tcl The tcl param of par
 #' @param xaxt The xaxt param of par
 #' @param yaxt The yaxt param of par
@@ -33,6 +34,7 @@ mplot <- function(x,
                   col.axis = "gray50",
                   col.lab = "gray50",
                   col.main = "gray50",
+                  col.legend = "orange",
                   tcl = .3,
                   xaxt = "s",
                   yaxt = "s",
@@ -63,7 +65,7 @@ mplot <- function(x,
          yaxt = yaxt,
          mgp = mgp)
     if (!is.null(main)) mtext(main, col = col.main, line = 1, adj = 0, font = 2, xpd = TRUE)
-    if (!is.null(.names)) mtext(.names, col = col.main, line = -1, adj = .99)
+    if (!is.null(.names)) mtext(.names, col = col.legend, line = -1, adj = .99)
   } else {
     for (i in seq(.ncol)) {
       plot(x[, i], y = NULL,
@@ -80,7 +82,7 @@ mplot <- function(x,
            yaxt = yaxt,
            mgp = mgp)
       if (i == 1) if (!is.null(main)) mtext(main, col = col.main, line = 1, adj = 0, font = 2, xpd = TRUE)
-      if (!is.null(.names)) mtext(.names[i], col = col.main, line = -1.5, adj = .99)
+      if (!is.null(.names)) mtext(.names[i], col = col.legend, line = -1.5, adj = .99)
     }
   }
 
