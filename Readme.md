@@ -4,3 +4,9 @@
 Build, play, and visualize scales, chords, and chord progressions
 
 <img align = "left" src="http://egenn.github.io/imgs/music.png" width="800">
+
+## Installation
+Using devtools:
+```r
+devtools::install_github("egenn/music")
+```
