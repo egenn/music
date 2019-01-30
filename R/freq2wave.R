@@ -5,7 +5,7 @@
 #' Frequency to waveform
 #'
 #' @inheritParams playFreq
-#' @param frequency Float: Frequency to convert to waveform
+#' @param frequency Float, vector: Frequency/ies to convert to waveform
 #' @param plot Logical: If TRUE, plot wave
 #' @export
 #' @author Efstathios D. Gennatas
@@ -21,29 +21,37 @@ freq2wave <- function(frequency,
 
   oscillator <- match.arg(oscillator)
   t <- seq(0, duration / BPM * 60, 1 / sample.rate)
+  n.freqs <- length(frequency)
 
-  wave <- switch(oscillator,
-                 sine = sin(t * frequency * 2 * pi),
-                 square = sign(sin(t * frequency * 2 * pi)),
-                 saw = 2 * (t * frequency - floor(.5 + t * frequency)),
-                 triangle = 2 * abs(2 * (t * frequency - floor(.5 + t * frequency))) - 1)
+  wave <- sapply(seq(n.freqs), function(i)
+    switch(oscillator,
+           sine = sin(t * frequency[i] * 2 * pi),
+           square = sign(sin(t * frequency[i] * 2 * pi)),
+           saw = 2 * (t * frequency[i] - floor(.5 + t * frequency[i])),
+           triangle = 2 * abs(2 * (t * frequency[i] - floor(.5 + t * frequency[i]))) - 1))
+
+  n.samples <- NROW(wave)
 
   if (attack.time > 0) {
-    attack <- rep(1, length(wave))
-    n.attack.samples <- attack.time / 1000 * sample.rate
+    attack <- rep(1, n.samples)
+    # n.attack.samples <- attack.time / 1000 * sample.rate
+    # If attack.time was inappropriately long for your waveform, you may have longer attack than wave
+    n.attack.samples <- min(n.samples, attack.time / 1000 * sample.rate)
     attack[seq(n.attack.samples)] <- seq(0, 1, length.out = n.attack.samples)
     wave <- wave * attack
   }
+
   if (inner.release.time > 0) {
-    total <- length(wave)
-    inner.release <- rep(1, total)
-    n.inner.release.samples <- inner.release.time / 1000 * sample.rate
-    inner.release[total - (seq(n.inner.release.samples) - 1)] <- seq(0, 1, length.out = n.inner.release.samples)
+    inner.release <- rep(1, n.samples)
+    n.inner.release.samples <- min(n.samples, inner.release.time / 1000 * sample.rate)
+    inner.release[n.samples - (seq(n.inner.release.samples) - 1)] <- seq(0, 1, length.out = n.inner.release.samples)
     wave <- wave * inner.release
   }
 
-  if (plot) mplot(wave)
+  if (plot) for (i in NCOL(wave)) mplot(wave[, i])
 
+  # Return vector if only one frequency was input
+  if (n.freqs == 1) wave <- wave[, 1]
   wave
 
 } # music::freq2wave
