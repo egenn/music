@@ -2,29 +2,12 @@
 # ::music::
 # Efstathios D. Gennatas egenn.github.io
 
-#' Sharps to flats
-#'
-#' Renames notes to use flats instead of sharps
-#'
-#' @param notes String: Notes to convert to flat notation
-#' @export
-sharps2flats <- function(notes) {
-
-  index <- grep("#", notes)
-  notes[index] <- gsub("A", "B", notes[index])
-  notes[index] <- gsub("G", "A", notes[index])
-  notes[index] <- gsub("F", "G", notes[index])
-  notes[index] <- gsub("D", "E", notes[index])
-  notes[index] <- gsub("C", "D", notes[index])
-  notes[index] <- gsub("#", "b", notes[index])
-  notes
-
-}
-
-
 #' Format notes
 #'
-#' Add octave if missing
+#' Format notes for use in other \pkg{music} functions
+#'
+#' Converts sharps to flats, adds octave number if missing (Default = 4), adn convert (rare) "bb" notes
+#' to regular notes
 #'
 #' @param notes Vector, String: Input notes in the form \code{c("C4", "D4", "Eb4")}
 #' @param default.octave Integer: Octave to use if missing in \code{notes}. Default = 4; i.e. \code{"C"}
@@ -85,7 +68,7 @@ noteDistance <- function(notes, verbose = TRUE) {
 
   invisible(.diff)
 
-} # music:noteDistance
+} # apollo:noteDistance
 
 
 #' Separate notes into vector of strings
@@ -104,4 +87,4 @@ strings <- function(x, sep = " ") {
 
   strsplit(x, split = sep)[[1]]
 
-} # music::strings
+} # apollo::strings
