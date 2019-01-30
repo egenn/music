@@ -6,7 +6,7 @@
 \usage{
 mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
   fg = "gray50", col = "cyan", col.axis = "gray50",
-  col.lab = "gray50", col.main = "gray50", col.legend = "orange",
+  col.lab = "gray50", col.main = "gray80", col.legend = "orange",
   tcl = 0.3, xaxt = "s", yaxt = "s", mgp = c(2, 0, 0),
   mar = NULL, oma = NULL)
 }
