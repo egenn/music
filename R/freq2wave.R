@@ -6,7 +6,7 @@
 #'
 #' @inheritParams playFreq
 #' @param frequency Float, vector: Frequency/ies to convert to waveform
-#' @param plot Logical: If TRUE, plot wave
+#' @param plot Logical: If TRUE, plot wave(s) using \link{mplot}
 #' @export
 #' @author Efstathios D. Gennatas
 
@@ -48,11 +48,8 @@ freq2wave <- function(frequency,
     wave <- wave * inner.release
   }
 
-  if (plot) for (i in NCOL(wave)) mplot(wave[, i])
-
-  # Return vector if only one frequency was input
-  # if (n.freqs == 1) wave <- wave[, 1]
   colnames(wave) <- names(frequency)
+  if (plot) mplot(wave)
   wave
 
 } # music::freq2wave
