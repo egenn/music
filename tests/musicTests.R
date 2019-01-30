@@ -17,3 +17,10 @@ buildProgression("A4", "minor")
 
 # Note distance
 noteDistance(strings("C4 Eb4 Gb4 Bb4"))
+
+# All together now
+mplot(freq2wave(note2freq(buildChord("C4", "minor")),
+                oscillator = "square",
+                duration = .3,
+                attack.time = 10,
+                inner.release.time = 10))
