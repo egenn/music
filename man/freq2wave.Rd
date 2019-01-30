@@ -9,7 +9,7 @@ freq2wave(frequency, oscillator = c("sine", "square", "saw", "triangle"),
   inner.release.time = 50, plot = FALSE)
 }
 \arguments{
-\item{frequency}{Float: Frequency to convert to waveform}
+\item{frequency}{Float, vector: Frequency/ies to convert to waveform}
 
 \item{oscillator}{String: "sine", "square", "saw". Default = "sine"}
 
