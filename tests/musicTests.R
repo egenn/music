@@ -11,9 +11,12 @@ freq <- note2freq(note = "A4")
 wave <- freq2wave(frequency = freq, plot = TRUE, duration = .4)
 
 # Build
-buildChord("Ab4", "minor", plot = TRUE)
+buildScale()
+buildChord()
 buildScale("G4", "minor", plot = TRUE)
-buildProgression("A4", "minor")
+buildScale("B4", "minor", ascending = FALSE, play = TRUE)
+buildChord("Ab4", "minor", plot = TRUE, play = TRUE)
+buildProgression("A4", "minor", plot = TRUE)
 
 # Note distance
 noteDistance(strings("C4 Eb4 Gb4 Bb4"))
@@ -24,3 +27,7 @@ mplot(freq2wave(note2freq(buildChord("C4", "minor")),
                 duration = .3,
                 attack.time = 10,
                 inner.release.time = 10))
+
+# More coverage
+formatNote(c("D#4", "Ebb"))
+
