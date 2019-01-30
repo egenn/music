@@ -13,7 +13,11 @@ formatNote(notes, default.octave = 4)
 becomes \code{"C4"}}
 }
 \description{
-Add octave if missing
+Format notes for use in other \pkg{music} functions
+}
+\details{
+Converts sharps to flats, adds octave number if missing (Default = 4), adn convert (rare) "bb" notes
+to regular notes
 }
 \author{
 Efstathios D. Gennatas
