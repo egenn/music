@@ -6,8 +6,9 @@
 \usage{
 mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
   fg = "gray50", col = "cyan", col.axis = "gray50",
-  col.lab = "gray50", col.main = "gray50", tcl = 0.3, xaxt = "s",
-  yaxt = "s", mgp = c(2, 0, 0), mar = NULL, oma = NULL)
+  col.lab = "gray50", col.main = "gray50", col.legend = "orange",
+  tcl = 0.3, xaxt = "s", yaxt = "s", mgp = c(2, 0, 0),
+  mar = NULL, oma = NULL)
 }
 \arguments{
 \item{x}{Input}
@@ -29,6 +30,8 @@ mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
 \item{col.lab}{Color: Label color}
 
 \item{col.main}{Color: Title color}
+
+\item{col.legend}{Color: Legend color}
 
 \item{tcl}{The tcl param of par}
 
