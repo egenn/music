@@ -1,4 +1,4 @@
-**music** R package [![Build Status](https://travis-ci.com/egenn/music.svg?branch=master)](https://travis-ci.com/egenn/music)
+**music** R package [![Build Status](https://travis-ci.com/egenn/music.svg?branch=master)](https://travis-ci.com/egenn/music) [![codecov](https://codecov.io/gh/egenn/music/branch/master/graph/badge.svg)](https://codecov.io/gh/egenn/music)
 ======================
 
 Build, play, and visualize scales, chords, and chord progressions
