@@ -33,7 +33,7 @@ mplot <- function(x,
                   col = "cyan",
                   col.axis = "gray50",
                   col.lab = "gray50",
-                  col.main = "gray50",
+                  col.main = "gray80",
                   col.legend = "orange",
                   tcl = .3,
                   xaxt = "s",
@@ -46,15 +46,22 @@ mplot <- function(x,
   on.exit(par(par.orig))
   .ncol <- NCOL(x)
   if (is.null(mar)) mar <- if (.ncol == 1) c(1.2, 1.2, .4, .4) else c(0, 0, 0, 0)
-  if (is.null(oma)) oma <- if (.ncol == 1) rep(0, 4) else c(1.2, 1.2, 1.2, 1.2)
+  if (is.null(oma)) {
+    if (.ncol == 1) {
+      oma <- if (is.null(main)) c(0, 0, 0, .5) else c(0, 0, 1, .5)
+    } else {
+      oma <- if (is.null(main)) c(1.2, 1.2, 1.2, 0.5) else c(1.2, 1.2, 2.2, 0.5)
+    }
+  }
   par(bg = bg, mar = mar, mfrow = c(.ncol, 1), oma = oma)
   .names <- colnames(x)
 
-  if (.ncol == 1) {
-    plot(x, y = NULL,
+  if (.ncol == 1) x <- matrix(x, ncol = 1)
+  for (i in seq(.ncol)) {
+    plot(x[, i], y = NULL,
          type = type,
          xlab = "",
-         ylab = "Amplitude",
+         ylab = "",
          fg = fg,
          pty = pty,
          col = col,
@@ -63,27 +70,11 @@ mplot <- function(x,
          tcl = tcl,
          xaxt = xaxt,
          yaxt = yaxt,
+         xaxs = "i",
+         yaxs = "r",
          mgp = mgp)
-    if (!is.null(main)) mtext(main, col = col.main, line = 1, adj = 0, font = 2, xpd = TRUE)
-    if (!is.null(.names)) mtext(.names, col = col.legend, line = -1, adj = .99)
-  } else {
-    for (i in seq(.ncol)) {
-      plot(x[, i], y = NULL,
-           type = type,
-           xlab = "",
-           ylab = "Amplitude",
-           fg = fg,
-           pty = pty,
-           col = col,
-           col.axis = col.axis,
-           col.lab = col.lab,
-           tck = tcl/(2 * .ncol),
-           xaxt = xaxt,
-           yaxt = yaxt,
-           mgp = mgp)
-      if (i == 1) if (!is.null(main)) mtext(main, col = col.main, line = 1, adj = 0, font = 2, xpd = TRUE)
-      if (!is.null(.names)) mtext(.names[i], col = col.legend, line = -1.5, adj = .99)
-    }
+    if (i == 1) if (!is.null(main)) mtext(main, col = col.main, line = 0.3, adj = 0, font = 2, xpd = TRUE)
+    if (!is.null(.names)) mtext(.names[i], col = col.legend, line = -1.5, adj = .99)
   }
 
 } # music::mplot
