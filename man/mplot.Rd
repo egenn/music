@@ -4,15 +4,13 @@
 \alias{mplot}
 \title{Plot waveform}
 \usage{
-mplot(x, y = NULL, type = "l", main = NULL, pty = "m",
-  bg = "black", fg = "gray50", col = "cyan", col.axis = "gray50",
+mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
+  fg = "gray50", col = "cyan", col.axis = "gray50",
   col.lab = "gray50", col.main = "gray50", tcl = 0.3, xaxt = "s",
   yaxt = "s", mgp = c(2, 0, 0), mar = NULL, oma = NULL)
 }
 \arguments{
 \item{x}{Input}
-
-\item{y}{Optional input}
 
 \item{type}{String: "l" for lines, "p" for points. Default = "l"}
 
