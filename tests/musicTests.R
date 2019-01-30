@@ -3,6 +3,7 @@
 # 2019 Efstathios D. Gennatas
 
 library(music)
+audio::set.audio.driver(NULL)
 
 # note2freq
 freq <- note2freq(note = "A4")
