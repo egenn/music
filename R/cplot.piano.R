@@ -24,16 +24,11 @@ cplot.piano <- function(notes = buildScale("C4", "minor"),
   names(cp.pos) <- .octave
   first.pos <- cp.pos[first.note]
   notes.sel <- c(first.pos, first.pos + cumsum(steps))
-  # cp.notes <- seq(26)
   col <- vector("list", 26)
   names(col) <- paste0("n", seq(26))
   black.keys <- c(2, 4, 7, 9, 11, 14, 16, 19, 21, 23, 26)
   for (i in seq(26)[-black.keys]) col[[i]] <- crayon::silver
   for (i in black.keys) col[[i]] <- bg
-
-  # sel.black <- which(notes.sel %in% black.keys)
-  # sel.white <- which(!notes.sel %in% black.keys)
-
   for (i in notes.sel) col[[i]] <- sel
 
   cat("\n")

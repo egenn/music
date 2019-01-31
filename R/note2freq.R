@@ -6,7 +6,7 @@ rt_octave <- c("C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B")
 rt_notes <- c(t(sapply(rt_octave, function(i) paste0(i, -2:8))))[-c(129:132)]
 rt_pos <- seq(rt_notes)
 names(rt_pos) <- rt_notes
-rt_semitones <- rt_pos - rt_pos['A4']
+rt_semitones <- rt_pos - rt_pos["A4"]
 
 #' Convert musical notes to their frequencies
 #'
@@ -28,4 +28,3 @@ note2freq <- function(note,
   .freqs
 
 } # music::note2freq
-

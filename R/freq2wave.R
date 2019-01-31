@@ -36,7 +36,6 @@ freq2wave <- function(frequency,
   # Attack ====
   if (attack.time > 0) {
     attack <- rep(1, n.samples)
-    # n.attack.samples <- attack.time / 1000 * sample.rate
     # If attack.time was inappropriately long for your waveform, you may have longer attack than wave
     n.attack.samples <- round(min(n.samples, attack.time / 1000 * sample.rate))
     attack[seq(n.attack.samples)] <- seq(0, 1, length.out = n.attack.samples)

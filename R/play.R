@@ -60,7 +60,7 @@ playFreq <- function(frequency,
                    sample.rate,
                    attack.time,
                    inner.release.time))
-  # if (plot) rtemis::mplot3.x(wave, type = 'l', pty = 'm', ylab = "Amplitude")
+
   if (plot) mplot(wave)
   playWave(wave)
 
