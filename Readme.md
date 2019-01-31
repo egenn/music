@@ -15,7 +15,7 @@ _Waveform time series plots:_
 ## Installation
 ### Install dependencies, if not already installed:
 ```r
-install.packages(c("audio", "crayon"))
+install.packages(c("audio", "crayon", "devtools"))
 ```
 ### Install latest **music** version using devtools:
 ```r
