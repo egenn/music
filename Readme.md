@@ -23,6 +23,6 @@ devtools::install_github("egenn/music")
 ```
 
 ## Documentation
-[Official R manual](http://egenn.github.io/docs/music.pdf)
+[Official R manual](https://egenn.github.io/docs/music.pdf)
 
-[music Vignette](https://egenn.github.io/music/music-vignette.html)
+[music Vignette](https://egenn.github.io/music/music-vignette)
