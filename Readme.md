@@ -21,3 +21,8 @@ install.packages(c("audio", "crayon"))
 ```r
 devtools::install_github("egenn/music")
 ```
+
+## Documentation
+[Official R manual](http://egenn.github.io/docs/music.pdf)
+
+[music Vignette](https://egenn.github.io/music/music-vignette.html)
