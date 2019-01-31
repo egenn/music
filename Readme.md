@@ -5,14 +5,12 @@
 Build, play, and visualize scales, chords, and chord progressions
 
 _ASCII piano console plots:_
-<img align = "left" src="http://egenn.github.io/imgs/music.png" width="800">
+<img align = "center" src="http://egenn.github.io/imgs/music_cplot.png" width="800">
 
 
 _Waveform scatterplots:_
-<br><br>
-<img align = "left" src="http://egenn.github.io/imgs/music_mplot_C4minor.png" width="320">
+<img align = "center" src="http://egenn.github.io/imgs/music_mplot_C4minor.png" width="800">
 
----
 
 ## Installation
 ### Install dependencies, if not already installed:
