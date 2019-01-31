@@ -33,7 +33,8 @@ mplot(freq2wave(note2freq(buildChord("C4", "minor")),
                 oscillator = "sine",
                 duration = .05,
                 attack.time = 5,
-                inner.release.time = 5))
+                inner.release.time = 5),
+      main = "C4 minor")
 
 # More coverage
 formatNote(c("D#4", "Ebb"))
