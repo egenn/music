@@ -4,11 +4,11 @@
 ## Description
 Build, play, and visualize scales, chords, and chord progressions
 
-_ASCII piano console plots:_
+_ASCII piano console plots:_  
 <img align = "center" src="http://egenn.github.io/imgs/music_cplot.png" width="600">
 
 
-_Waveform scatterplots:_
+_Waveform scatterplots:_  
 <img align = "center" src="http://egenn.github.io/imgs/music_mplot_C4minor.png" width="600">
 
 
