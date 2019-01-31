@@ -1,4 +1,4 @@
-**music** R package [![Build Status](https://travis-ci.com/egenn/music.svg?branch=master)](https://travis-ci.com/egenn/music) [![codecov](https://codecov.io/gh/egenn/music/branch/master/graph/badge.svg)](https://codecov.io/gh/egenn/music)
+**music** R package [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)[![Build Status](https://travis-ci.com/egenn/music.svg?branch=master)](https://travis-ci.com/egenn/music) [![codecov](https://codecov.io/gh/egenn/music/branch/master/graph/badge.svg)](https://codecov.io/gh/egenn/music)
 ======================
 
 ## Description
@@ -15,7 +15,8 @@ _Waveform time series plots:_
 ## Installation
 ### Install dependencies, if not already installed:
 ```r
-install.packages(c("audio", "crayon", "devtools"))
+install.packages(c("audio", "crayon", "devtools
+"))
 ```
 ### Install latest **music** version using devtools:
 ```r
