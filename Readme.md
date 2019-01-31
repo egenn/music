@@ -8,7 +8,7 @@ _ASCII piano console plots:_
 <img align = "center" src="http://egenn.github.io/imgs/music_cplot.png" width="600">
 
 
-_Waveform scatterplots:_  
+_Waveform time series plots:_  
 <img align = "center" src="http://egenn.github.io/imgs/music_mplot_C4minor.png" width="600">
 
 
