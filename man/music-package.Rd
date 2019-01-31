@@ -3,7 +3,7 @@
 \docType{package}
 \name{music-package}
 \alias{music-package}
-\title{\pkg{music}: A little bit of music in R}
+\title{\pkg{music}: A little bit of music theory in R}
 \description{
-\pkg{music}: A little bit of music in R
+\pkg{music}: A little bit of music theory in R
 }

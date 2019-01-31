@@ -2,7 +2,7 @@
 # ::music::
 # 2019 Efstathios D. Gennatas egenn.github.io
 
-#' \pkg{music}: A little bit of music in R
+#' \pkg{music}: A little bit of music theory in R
 #'
 #' @docType package
 #' @name music-package
