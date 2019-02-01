@@ -23,6 +23,13 @@ Build chord
 \details{
 For convenience and consistency, all sharps and flats are denoted using flats
 }
+\examples{
+buildChord("C4", "minor")
+buildChord("A4", "sus2", plot = TRUE)
+\dontrun{
+buildChord("B4", "sus2", play = TRUE)
+}
+}
 \author{
 Efstathios D. Gennatas
 }

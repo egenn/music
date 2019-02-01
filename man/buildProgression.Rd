@@ -21,6 +21,13 @@ buildProgression(root = "A4", scale = "minor", play = FALSE,
 \description{
 Build Chord Progression
 }
+\examples{
+buildProgression("C4", "minor")
+buildProgression("Bb4", "major")
+\dontrun{
+buildProgression("Bb4", "major", play = TRUE, plot = TRUE)
+}
+}
 \author{
 Efstathios D. Gennatas
 }

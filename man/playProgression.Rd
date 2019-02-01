@@ -30,6 +30,11 @@ Deefault = 50 (Also helps prevent popping)}
 \description{
 Play Progression
 }
+\examples{
+\dontrun{
+playProgression(buildProgression("G4", "minor"))
+}
+}
 \author{
 Efstathios D. Gennatas
 }

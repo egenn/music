@@ -33,6 +33,11 @@ The constructed waveform (invisibly)
 \description{
 Play Chord
 }
+\examples{
+\dontrun{
+playChord(buildChord("E4", "minor"))
+}
+}
 \author{
 Efstathios D. Gennatas
 }

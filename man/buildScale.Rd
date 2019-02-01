@@ -27,6 +27,13 @@ Build scale
 \details{
 For convenience and consistency, all sharps and flats are denoted using flats
 }
+\examples{
+buildScale("C4", "minor")
+buildScale("B4", "minor", ascending = FALSE, plot = TRUE)
+\dontrun{
+buildScale("B4", "minor", ascending = FALSE, play = TRUE, plot TRUE)
+}
+}
 \author{
 Efstathios D. Gennatas
 }

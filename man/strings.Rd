@@ -19,6 +19,9 @@ Convenience function to separate notes into vector of strings
 Makes it easy to copy-paste notes into other functions
 e.g. \code{playChord(strings("C4 Eb4 G4 D5"))}
 }
+\examples{
+strings("C4 Eb4 Gb4 Bb4")
+}
 \author{
 Efstathios D. Gennatas
 }

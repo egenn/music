@@ -12,6 +12,8 @@
 #' @param notes Vector, String: Input notes in the form \code{c("C4", "D4", "Eb4")}
 #' @param default.octave Integer: Octave to use if missing in \code{notes}. Default = 4; i.e. \code{"C"}
 #' becomes \code{"C4"}
+#' @examples
+#' formatNote(c("D#4", "Ebb"))
 #' @author Efstathios D. Gennatas
 #' @export
 
@@ -51,6 +53,8 @@ formatNote <- function(notes, default.octave = 4) {
 #' @param notes String, vector: Notes in form \code{c("C4", "Eb4", "Gb4")}
 #' @param verbose Logical: If TRUE, print to console
 #' @return Vector of length \code{1 - length(notes)} with semitone distances between notes
+#' @examples
+#' noteDistance(strings("C4 Eb4 Gb4 Bb4"))
 #' @author Efstathios D. Gennatas
 #' @export
 
@@ -80,6 +84,8 @@ noteDistance <- function(notes, verbose = TRUE) {
 #' @param x String: A single character object which consists of multiple notes separated by \code{sep}
 #' e.g. \code{"C4 Eb4 G4 D5"}
 #' @param sep String: the character that separates notes in \code{x}. Default = " "
+#' @examples
+#' strings("C4 Eb4 Gb4 Bb4")
 #' @export
 #' @author Efstathios D. Gennatas
 

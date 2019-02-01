@@ -8,7 +8,7 @@ mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
   fg = "gray50", col = "cyan", col.axis = "gray50",
   col.lab = "gray50", col.main = "gray80", col.legend = "white",
   tcl = 0.3, xaxt = "s", yaxt = "s", mgp = c(2, 0, 0),
-  mar = NULL, oma = NULL)
+  mar = NULL, oma = NULL, ...)
 }
 \arguments{
 \item{x}{Input}
@@ -44,6 +44,8 @@ mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
 \item{mar}{Vector: Margins for \code{par}}
 
 \item{oma}{Vector: The oma param of par}
+
+\item{...}{Additional parameters to pass to \code{plot}}
 }
 \description{
 Plot waveform

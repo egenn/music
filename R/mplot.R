@@ -21,6 +21,7 @@
 #' @param mgp The mgp param of par
 #' @param mar Vector: Margins for \code{par}
 #' @param oma Vector: The oma param of par
+#' @param ... Additional parameters to pass to \code{plot}
 #' @export
 #' @author Efstathios D. Gennatas
 
@@ -40,7 +41,7 @@ mplot <- function(x,
                   yaxt = "s",
                   mgp = c(2, 0, 0),
                   mar = NULL,
-                  oma = NULL) {
+                  oma = NULL, ...) {
 
   par.orig <- par(no.readonly = TRUE)
   on.exit(par(par.orig))
@@ -72,7 +73,7 @@ mplot <- function(x,
          yaxt = yaxt,
          xaxs = "i",
          yaxs = "r",
-         mgp = mgp)
+         mgp = mgp, ...)
     if (i == 1) if (!is.null(main)) mtext(main, col = col.main, line = 0.3, adj = 0, font = 2, xpd = TRUE)
     if (!is.null(.names)) mtext(.names[i], col = col.legend, line = -1.5, adj = .99)
   }

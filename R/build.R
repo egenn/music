@@ -43,6 +43,12 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #' @param play Logical: If TRUE, play scale using \link{playNote}
 #' @param plot Logical: If TRUE, plot scale notes using \link{cplot.piano}
 #' @param ... Additional arguments to be passed to \link{playNote} if \code{play = TRUE}
+#' @examples
+#' buildScale("C4", "minor")
+#' buildScale("B4", "minor", ascending = FALSE, plot = TRUE)
+#' \dontrun{
+#' buildScale("B4", "minor", ascending = FALSE, play = TRUE, plot TRUE)
+#' }
 #' @export
 #' @author Efstathios D. Gennatas
 
@@ -119,6 +125,12 @@ chords <- list()
 #' @param play Logical: If TRUE, play chord using \link{playChord}
 #' @param plot Logical: If TRUE, plot chord notes using \link{cplot.piano}
 #' @param ... Additional arguments to be passed to \link{playChord} if \code{play = TRUE}
+#' @examples
+#' buildChord("C4", "minor")
+#' buildChord("A4", "sus2", plot = TRUE)
+#' \dontrun{
+#' buildChord("B4", "sus2", play = TRUE)
+#' }
 #' @export
 #' @author Efstathios D. Gennatas
 
@@ -156,6 +168,12 @@ chordProgression <- list(major = c("major", "minor", "minor", "major", "major", 
 #' @param play Logical: If TRUE, play scale using \link{playProgression}
 #' @param plot Logical: If TRUE, plot each chord in the progression using \link{cplot.piano}
 #' @param ... Additional arguments to be passed to \link{playProgression} if \code{ play = TRUE}
+#' @examples
+#' buildProgression("C4", "minor")
+#' buildProgression("Bb4", "major")
+#' \dontrun{
+#' buildProgression("Bb4", "major", play = TRUE, plot = TRUE)
+#' }
 #' @export
 #' @author Efstathios D. Gennatas
 

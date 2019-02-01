@@ -19,6 +19,9 @@ Format notes for use in other \pkg{music} functions
 Converts sharps to flats, adds octave number if missing (Default = 4), adn convert (rare) "bb" notes
 to regular notes
 }
+\examples{
+formatNote(c("D#4", "Ebb"))
+}
 \author{
 Efstathios D. Gennatas
 }

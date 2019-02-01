@@ -29,6 +29,9 @@ Deefault = 50 (Also helps prevent popping)}
 \description{
 Frequency to waveform
 }
+\examples{
+wave <- freq2wave(note2freq(buildChord("A4", "sus2")))
+}
 \author{
 Efstathios D. Gennatas
 }

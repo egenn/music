@@ -15,6 +15,9 @@ Set to "black" for use on a light terminal.}
 \description{
 Build ASCII plot of a piano with a set of notes highligthed
 }
+\examples{
+cplot.piano(buildScale("B4", "minor"))
+}
 \author{
 Efstathios D. Gennatas
 }

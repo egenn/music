@@ -1,9 +1,8 @@
 # play.R
 # ::music::
-# 2019 Efstathios D. Gennatas
+# 2019 Efstathios D. Gennatas egenn.github.io
 
-
-#' "Polyphonic" Wave Player
+#' Minimal "Polyphonic" Wave Player
 #'
 #' Play one or more waveforms at the same time using \code{audio::play}
 #'
@@ -11,7 +10,10 @@
 #' simultaneously
 #' @param sample.rate Integer: Sample rate. Default = 44100
 #' @param plot Logical: If TRUE: plot wave using \link{mplot}.
-#'
+#' @examples
+#' \dontrun{
+#' playWave(freq2wave(440))
+#' }
 #' @export
 #' @author Efstathios D. Gennatas
 
@@ -20,9 +22,7 @@ playWave <- function(wave,
                      plot = FALSE) {
   if (is.null(dim(wave))) wave <- matrix(wave, ncol = 1)
   n.notes <- NCOL(wave)
-  for (i in seq(n.notes)) {
-    audio::play(wave[, i], rate = sample.rate)
-  }
+  for (i in seq(n.notes)) audio::play(wave[, i], rate = sample.rate)
 
   if (plot) mplot(wave)
 
@@ -40,6 +40,10 @@ playWave <- function(wave,
 #' @param inner.release.time Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
 #' Deefault = 50 (Also helps prevent popping)
 #' @param plot Logical: If TRUE, plot waveform
+#' @examples
+#' \dontrun{
+#' playFreq(440)
+#' }
 #' @export
 #' @author Efstathios D. Gennatas
 
@@ -72,6 +76,10 @@ playFreq <- function(frequency,
 #' @param note String, Vector: Note(s) to be played, e.g. c("Ab4", "B4")
 #' @param plot Logical: If TRUE, plot notes using \link{cplot.piano}. This support only two octaves;
 #' do not try plotting if your notes span more than two octaves.
+#' @examples
+#' \dontrun{
+#' playNote("B4")
+#' }
 #' @export
 #' @author Efstathios D. Gennatas
 
@@ -108,6 +116,10 @@ playNote <- function(note,
 #' @param plot Logical: If TRUE, plot chord using \link{cplot.piano}
 #' @export
 #' @return The constructed waveform (invisibly)
+#' @examples
+#' \dontrun{
+#' playChord(buildChord("E4", "minor"))
+#' }
 #' @author Efstathios D. Gennatas
 
 playChord <- function(chord,
@@ -147,6 +159,10 @@ playChord <- function(chord,
 #' e.g. output of \link{buildProgression}
 #' @param plot Logical. If TRUE, plot each chord in the progression using \link{cplot.piano}
 #' @export
+#' @examples
+#' \dontrun{
+#' playProgression(buildProgression("G4", "minor"))
+#' }
 #' @author Efstathios D. Gennatas
 
 playProgression <- function(progression,

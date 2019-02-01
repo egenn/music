@@ -17,6 +17,9 @@ Vector of length \code{1 - length(notes)} with semitone distances between notes
 \description{
 Calculates note distance in semitones
 }
+\examples{
+noteDistance(strings("C4 Eb4 Gb4 Bb4"))
+}
 \author{
 Efstathios D. Gennatas
 }

@@ -29,6 +29,11 @@ Deefault = 50 (Also helps prevent popping)}
 \description{
 Play frequency
 }
+\examples{
+\dontrun{
+playFreq(440)
+}
+}
 \author{
 Efstathios D. Gennatas
 }

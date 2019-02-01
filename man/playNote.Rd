@@ -30,6 +30,11 @@ do not try plotting if your notes span more than two octaves.}
 \description{
 Play Note
 }
+\examples{
+\dontrun{
+playNote("B4")
+}
+}
 \author{
 Efstathios D. Gennatas
 }

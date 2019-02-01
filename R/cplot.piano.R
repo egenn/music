@@ -10,6 +10,8 @@
 #' @param blackKey.col Color to use for black keys. Default = "white" for use on a dark terminal.
 #' Set to "black" for use on a light terminal.
 #' @export
+#' @examples
+#' cplot.piano(buildScale("B4", "minor"))
 #' @author Efstathios D. Gennatas
 
 cplot.piano <- function(notes = buildScale("C4", "minor"),

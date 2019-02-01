@@ -17,6 +17,11 @@ simultaneously}
 \description{
 Play one or more waveforms at the same time using \code{audio::play}
 }
+\examples{
+\dontrun{
+playWave(freq2wave(440))
+}
+}
 \author{
 Efstathios D. Gennatas
 }
