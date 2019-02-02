@@ -2,7 +2,7 @@
 % Please edit documentation in R/play.R
 \name{playWave}
 \alias{playWave}
-\title{"Polyphonic" Wave Player}
+\title{Minimal "Polyphonic" Wave Player}
 \usage{
 playWave(wave, sample.rate = 44100, plot = FALSE)
 }
