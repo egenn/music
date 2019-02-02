@@ -2,10 +2,10 @@ Package: music
 Type: Package
 Title: Musical Scales, Chords, Progressions
 Version: 0.1.0
-Authors@R: person(given = "Efstathios D.", family = "Gennatas", role = c("aut", "cre", "cph"), email = "Efstathios.Gennatas@ucsf.edu")
-Author: Efstathios D. Gennatas [aut, cre, cph]
+Authors@R: person(given = "Efstathios D.", family = "Gennatas", role = c("aut", "cre"), email = "Efstathios.Gennatas@ucsf.edu")
+Author: Efstathios D. Gennatas [aut, cre]
 Maintainer: Efstathios D. Gennatas <Efstathios.Gennatas@ucsf.edu>
-Description: Build, play, visualize musical scales, chords and chord progressions.
+Description: Music Theory in R: Build, play, visualize musical scales, chords and chord progressions.
 Imports: graphics, utils, audio, crayon
 License: GPL (>=3)
 Encoding: UTF-8
