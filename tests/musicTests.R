@@ -1,8 +1,9 @@
 # musicTests.R
 # ::music::
-# 2019 Efstathios D. Gennatas
+# 2019 Efstathios D. Gennatas egenn.github.io
 
 library(music)
+is_macos <- length(grep("darwin", sessionInfo()$platform)) == 1
 
 # note2freq
 freq <- note2freq(note = "A4")
@@ -14,16 +15,18 @@ wave <- freq2wave(frequency = freq, plot = TRUE, duration = .4)
 buildScale()
 buildChord()
 buildScale("G4", "minor", plot = TRUE)
-buildScale("B4", "minor", ascending = FALSE, play = TRUE)
-Ab4minor <- buildChord("Ab4", "minor", plot = TRUE, play = TRUE)
-A4minor_progression <- buildProgression("A4", "minor", plot = TRUE, play = TRUE)
+buildScale("B4", "minor", ascending = FALSE, play = is_macos)
+Ab4minor <- buildChord("Ab4", "minor", plot = TRUE, play = is_macos)
+A4minor_progression <- buildProgression("A4", "minor", plot = TRUE, play = is_macos)
 
 # Play
-playWave(wave, plot = TRUE)
-playChord(Ab4minor, plot = TRUE)
-playFreq(freq, plot = TRUE)
-playProgression(A4minor_progression, plot = TRUE)
-playNote("F5", plot = TRUE)
+if (is_macos) {
+  playWave(wave, plot = TRUE)
+  playChord(Ab4minor, plot = TRUE)
+  playFreq(freq, plot = TRUE)
+  playProgression(A4minor_progression, plot = TRUE)
+  playNote("F5", plot = TRUE)
+}
 
 # Note distance
 noteDistance(strings("C4 Eb4 Gb4 Bb4"))
