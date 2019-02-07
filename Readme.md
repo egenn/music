@@ -28,4 +28,4 @@ devtools::install_github("egenn/music")
 
 [music Vignette](https://egenn.github.io/music/music-vignette)
 
-<img align = "center" src="http://egenn.github.io/imgs/music_hex_logo.png" width="300">
+<img align = "center" src="http://egenn.github.io/imgs/music_hex_logo.png" width="250">
