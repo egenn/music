@@ -4,11 +4,11 @@
 \alias{mplot}
 \title{Plot waveform}
 \usage{
-mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
-  fg = "gray50", col = "cyan", col.axis = "gray50",
-  col.lab = "gray50", col.main = "gray80", col.legend = "white",
-  tcl = 0.3, xaxt = "s", yaxt = "s", mgp = c(2, 0, 0),
-  mar = NULL, oma = NULL, ...)
+mplot(x, type = "l", main = NULL, legend = TRUE, lwd = 1,
+  pty = "m", bg = "black", fg = "gray50", col = "cyan",
+  col.axis = "gray50", col.lab = "gray50", col.main = "gray80",
+  col.legend = "white", tcl = 0.3, xaxt = "s", yaxt = "s",
+  new = FALSE, mgp = c(2, 0, 0), mar = NULL, oma = NULL, ...)
 }
 \arguments{
 \item{x}{Input}
@@ -16,6 +16,10 @@ mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
 \item{type}{String: "l" for lines, "p" for points. Default = "l"}
 
 \item{main}{String: Plot title}
+
+\item{legend}{Logical: If TRUE, show legends on plot, if \code{x} has column names}
+
+\item{lwd}{Float: Line width. Default = 1}
 
 \item{pty}{String: "m" to fill available device space, "s" for square plot. Default = "m"}
 
@@ -33,17 +37,19 @@ mplot(x, type = "l", main = NULL, pty = "m", bg = "black",
 
 \item{col.legend}{Color: Legend color}
 
-\item{tcl}{The tcl param of par}
+\item{tcl}{The 'tcl' param of par}
 
-\item{xaxt}{The xaxt param of par}
+\item{xaxt}{The 'xaxt' param of par}
 
-\item{yaxt}{The yaxt param of par}
+\item{yaxt}{The 'yaxt' param of par}
 
-\item{mgp}{The mgp param of par}
+\item{new}{The 'new' param of par}
 
-\item{mar}{Vector: Margins for \code{par}}
+\item{mgp}{The 'mgp' param of par}
 
-\item{oma}{Vector: The oma param of par}
+\item{mar}{Vector, length 4: Margins for \code{par}}
+
+\item{oma}{Vector, length 4: The 'oma' param of par}
 
 \item{...}{Additional parameters to pass to \code{plot}}
 }
