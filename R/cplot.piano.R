@@ -2,9 +2,9 @@
 # ::music::
 # 2019 Efstathios D. Gennatas
 
-#' Console plot notes
+#' Console piano plot for notes
 #'
-#' Build ASCII plot of a piano with a set of notes highligthed
+#' Build an ASCII plot of notes on a piano
 #'
 #' @param notes String, vector: Notes to highlight. Default = \code{buildScale("C4", "minor")}
 #' @param blackKey.col Color to use for black keys. Default = "white" for use on a dark terminal.
