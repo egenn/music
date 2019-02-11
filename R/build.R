@@ -38,8 +38,8 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #' For convenience and consistency, all sharps and flats are denoted using flats
 #' @param root String: Root note.  e.g. "C4"
 #' @param scale String: Scale to build. Default = "minor"
-#' @param ascending Logical: If TRUE, return notes in ascending order, otherwise in descending.
-#' Default = TRUE
+#' @param descending Logical: If TRUE, return notes in descending order, otherwise in ascending
+#' Default = FALSE
 #' @param play Logical: If TRUE, play scale using \link{playNote}
 #' @param plot Logical: If TRUE, plot scale notes using \link{cplot.piano}
 #' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
@@ -47,15 +47,15 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #' @param ... Additional arguments to be passed to \link{playNote} if \code{play = TRUE}
 #' @examples
 #' buildScale("C4", "minor")
-#' buildScale("B4", "minor", ascending = FALSE, plot = TRUE)
+#' buildScale("B4", "minor", descending = TRUE, plot = TRUE)
 #' \dontrun{
-#' buildScale("B4", "minor", ascending = FALSE, play = TRUE, plot TRUE)
+#' buildScale("B4", "minor", descending = TRUE, play = TRUE, plot TRUE)
 #' }
 #' @export
 #' @author Efstathios D. Gennatas
 
 buildScale <- function(root, scale = "minor",
-                       ascending = TRUE,
+                       descending = FALSE,
                        play = FALSE,
                        plot = FALSE,
                        formatNotation = TRUE, ...) {
@@ -72,7 +72,7 @@ buildScale <- function(root, scale = "minor",
   .scale.pos <- cumsum(c(root.pos, scaleSteps[[scale]]))
 
   .notes <- .allnotes[.scale.pos]
-  if (!ascending) .notes <- rev(.notes)
+  if (descending) .notes <- rev(.notes)
   if (play) playNote(.notes, ...)
   if (plot) {
     cat(blue$bold("  ", root, scale, "scale\n"))
