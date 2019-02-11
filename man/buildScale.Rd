@@ -4,7 +4,7 @@
 \alias{buildScale}
 \title{Build Scale}
 \usage{
-buildScale(root, scale = "minor", ascending = TRUE, play = FALSE,
+buildScale(root, scale = "minor", descending = FALSE, play = FALSE,
   plot = FALSE, formatNotation = TRUE, ...)
 }
 \arguments{
@@ -12,8 +12,8 @@ buildScale(root, scale = "minor", ascending = TRUE, play = FALSE,
 
 \item{scale}{String: Scale to build. Default = "minor"}
 
-\item{ascending}{Logical: If TRUE, return notes in ascending order, otherwise in descending.
-Default = TRUE}
+\item{descending}{Logical: If TRUE, return notes in descending order, otherwise in ascending
+Default = FALSE}
 
 \item{play}{Logical: If TRUE, play scale using \link{playNote}}
 
@@ -32,9 +32,9 @@ For convenience and consistency, all sharps and flats are denoted using flats
 }
 \examples{
 buildScale("C4", "minor")
-buildScale("B4", "minor", ascending = FALSE, plot = TRUE)
+buildScale("B4", "minor", descending = TRUE, plot = TRUE)
 \dontrun{
-buildScale("B4", "minor", ascending = FALSE, play = TRUE, plot TRUE)
+buildScale("B4", "minor", descending = TRUE, play = TRUE, plot TRUE)
 }
 }
 \author{
