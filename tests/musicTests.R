@@ -15,7 +15,7 @@ wave <- freq2wave(frequency = freq, plot = TRUE, duration = .4)
 buildScale()
 buildChord()
 buildScale("G4", "minor", plot = TRUE)
-buildScale("B4", "minor", ascending = FALSE, play = is_macos)
+buildScale("B4", "minor", descending = TRUE, play = is_macos)
 Ab4minor <- buildChord("Ab4", "minor", plot = TRUE, play = is_macos)
 A4minor_progression <- buildProgression("A4", "minor", plot = TRUE, play = is_macos)
 
