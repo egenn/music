@@ -5,7 +5,7 @@
 \title{Build Scale}
 \usage{
 buildScale(root, scale = "minor", ascending = TRUE, play = FALSE,
-  plot = FALSE, ...)
+  plot = FALSE, formatNotation = TRUE, ...)
 }
 \arguments{
 \item{root}{String: Root note.  e.g. "C4"}
@@ -18,6 +18,9 @@ Default = TRUE}
 \item{play}{Logical: If TRUE, play scale using \link{playNote}}
 
 \item{plot}{Logical: If TRUE, plot scale notes using \link{cplot.piano}}
+
+\item{formatNotation}{Logical: If TRUE, format notes to include both flats and sharps
+to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")}
 
 \item{...}{Additional arguments to be passed to \link{playNote} if \code{play = TRUE}}
 }

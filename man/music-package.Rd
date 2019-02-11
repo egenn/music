@@ -3,7 +3,10 @@
 \docType{package}
 \name{music-package}
 \alias{music-package}
-\title{\pkg{music}: A little bit of music theory in R}
+\title{\pkg{music}: Learn and use music theory}
 \description{
-\pkg{music}: A little bit of music theory in R
+The music package allows you to build, play, and visualize scales, chords, and chord progression.
+For playback, \pkg{music} builts waveforms as matrices and passes them to the \pkg{audio} package which
+interfaces with the system's audio driver.
+The notation and frequencies used throughout the package are based on twelve-tone equal temperament tuning.
 }

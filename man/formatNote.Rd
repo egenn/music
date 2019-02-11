@@ -16,7 +16,7 @@ becomes \code{"C4"}}
 Format notes for use in other \pkg{music} functions
 }
 \details{
-Converts sharps to flats, adds octave number if missing (Default = 4), adn convert (rare) "bb" notes
+Converts sharps to flats, adds octave number if missing (Default = 4), and converts (rare) "bb" notes
 to regular notes
 }
 \examples{

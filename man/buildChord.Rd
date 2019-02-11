@@ -4,7 +4,8 @@
 \alias{buildChord}
 \title{Build Chord}
 \usage{
-buildChord(root, chord = "minor", play = FALSE, plot = FALSE, ...)
+buildChord(root, chord = "minor", play = FALSE, plot = FALSE,
+  formatNotation = TRUE, ...)
 }
 \arguments{
 \item{root}{String: Root note}
@@ -14,6 +15,9 @@ buildChord(root, chord = "minor", play = FALSE, plot = FALSE, ...)
 \item{play}{Logical: If TRUE, play chord using \link{playChord}}
 
 \item{plot}{Logical: If TRUE, plot chord notes using \link{cplot.piano}}
+
+\item{formatNotation}{Logical: If TRUE, format notes to include both flats and sharps
+to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")}
 
 \item{...}{Additional arguments to be passed to \link{playChord} if \code{play = TRUE}}
 }
