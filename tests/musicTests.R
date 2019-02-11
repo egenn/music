@@ -42,3 +42,8 @@ mplot(freq2wave(note2freq(buildChord("C4", "minor")),
 # More coverage
 formatNote(c("D#4", "Ebb"))
 mplot(rnorm(200), main = "rnorm")
+
+# formatNotation
+formatNotation(c("C4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
+formatNotation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
+formatNotation(c("Db4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
