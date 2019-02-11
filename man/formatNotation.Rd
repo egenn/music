@@ -6,11 +6,11 @@
 \usage{
 formatNotation(notes)
 }
-\description{
-Since internally only flats are used, this function changes flats to sharps
-if a note of same letter is already present in the sequence.
+\arguments{
+\item{notes}{String, vector: Notes to format}
 }
-\details{
+\description{
+Changes flats to sharps if a note of same letter is already present in the sequence.
 e.g. convert the C4 Lydian from:
 "C4"  "D4"  "E4"  "Gb4" "G4"  "A4"  "B4"  "C5"
 to:
@@ -19,4 +19,3 @@ to:
 \author{
 Efstathios D. Gennatas
 }
-\keyword{internal}
