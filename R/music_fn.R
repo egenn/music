@@ -1,12 +1,12 @@
 # music_fn.R
 # ::music::
-# Efstathios D. Gennatas egenn.github.io
+# 2019 Efstathios D. Gennatas egenn.github.io
 
 #' Format notes
 #'
 #' Format notes for use in other \pkg{music} functions
 #'
-#' Converts sharps to flats, adds octave number if missing (Default = 4), adn convert (rare) "bb" notes
+#' Converts sharps to flats, adds octave number if missing (Default = 4), and converts (rare) "bb" notes
 #' to regular notes
 #'
 #' @param notes Vector, String: Input notes in the form \code{c("C4", "D4", "Eb4")}
@@ -19,6 +19,7 @@
 
 formatNote <- function(notes, default.octave = 4) {
 
+  notes <- toupper(notes)
   # Sharps to flats ====
   index <- grep("#", notes)
   notes[index] <- gsub("A", "B", notes[index])
@@ -94,3 +95,51 @@ strings <- function(x, sep = " ") {
   strsplit(x, split = sep)[[1]]
 
 } # apollo::strings
+
+
+#' Format Notation
+#'
+#' Since internally only flats are used, this function changes flats to sharps
+#' if a note of same letter is already present in the sequence.
+#'
+#' e.g. convert the C4 Lydian from:
+#' "C4"  "D4"  "E4"  "Gb4" "G4"  "A4"  "B4"  "C5"
+#' to:
+#' "C4"  "D4"  "E4"  "F#4" "G4"  "A4"  "B4"  "C5"
+#'
+#' @author Efstathios D. Gennatas
+#' @keywords internal
+
+formatNotation <- function(notes) {
+
+  # Get letters
+
+  a <- 1
+  while (a < length(notes)) {
+    i <- a
+    a <- a + 1
+    .notes <- substring(notes, 1, 1)
+    .match <- which(.notes[i] == .notes[-i])[1] + 1
+    .diff <- if (!is.na(.match)) {
+      note1 <- gsub(".$", "", notes[i])
+      note2 <- gsub(".$", "", notes[.match])
+      index <- c(i, .match)
+      # gsub(".$", "", notes[i]) != gsub(".$", "", notes[.match])
+      note1 != note2
+    } else {
+      FALSE
+    }
+    if (.diff) {
+      # find which is b
+      is.b <- grep(pattern = "b", ignore.case = FALSE, x = c(note1, note2))
+      .change <- index[is.b]
+      note.tochange <- notes[.change]
+      octave <- substring(note.tochange, nchar(note.tochange))
+      new.note <- paste0(LETTERS[which(LETTERS == .notes[.change]) - 1], "#", octave)
+      notes[.change] <- new.note
+    }
+  }
+
+  notes
+
+} # music::formatNotation
