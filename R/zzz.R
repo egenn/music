@@ -2,8 +2,12 @@
 # ::music::
 # 2019 Efstathios D. Gennatas egenn.github.io
 
-#' \pkg{music}: A little bit of music theory in R
+#' \pkg{music}: Learn and use music theory
 #'
+#' The music package allows you to build, play, and visualize scales, chords, and chord progression.
+#' For playback, \pkg{music} builts waveforms as matrices and passes them to the \pkg{audio} package which
+#' interfaces with the system's audio driver.
+#' The notation and frequencies used throughout the package are based on twelve-tone equal temperament tuning.
 #' @docType package
 #' @name music-package
 #' @import graphics utils crayon
