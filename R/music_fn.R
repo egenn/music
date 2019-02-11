@@ -19,7 +19,6 @@
 
 formatNote <- function(notes, default.octave = 4) {
 
-  notes <- toupper(notes)
   # Sharps to flats ====
   index <- grep("#", notes)
   notes[index] <- gsub("A", "B", notes[index])
@@ -99,16 +98,15 @@ strings <- function(x, sep = " ") {
 
 #' Format Notation
 #'
-#' Since internally only flats are used, this function changes flats to sharps
-#' if a note of same letter is already present in the sequence.
-#'
+#' Changes flats to sharps if a note of same letter is already present in the sequence.
 #' e.g. convert the C4 Lydian from:
 #' "C4"  "D4"  "E4"  "Gb4" "G4"  "A4"  "B4"  "C5"
 #' to:
 #' "C4"  "D4"  "E4"  "F#4" "G4"  "A4"  "B4"  "C5"
 #'
+#' @param notes String, vector: Notes to format
 #' @author Efstathios D. Gennatas
-#' @keywords internal
+#' @export
 
 formatNotation <- function(notes) {
 
