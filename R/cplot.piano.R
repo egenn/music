@@ -17,6 +17,8 @@
 cplot.piano <- function(notes = buildScale("C4", "minor"),
                         blackKey.col = "white") {
 
+  notes0 <- notes
+  notes <- formatNote(notes)
   bg <- if (blackKey.col == "white") crayon::bgWhite else crayon::bgBlack
   sel <- if (blackKey.col == "white") crayon::bgCyan$black else crayon::bgCyan$white
   notes.pos <- sort(pos[notes])
@@ -39,6 +41,6 @@ cplot.piano <- function(notes = buildScale("C4", "minor"),
   cat("  |   |   |   |   |   |   |   |   |   |   |   |   |   |   |   |\n")
   cat("  |",col$n1("C"),"|",col$n3("D"),"|",col$n5("E"),"|",col$n6("F"),"|",col$n8("G"),"|",col$n10("A"),"|",col$n12("B"),"|",col$n13("C"),"|",col$n15("D"),"|",col$n17("E"),"|",col$n18("F"),"|",col$n20("G"),"|",col$n22("A"),"|",col$n24("B"),"|",col$n25("C"),"|\n")
 
-  cat("\n ", silver("Notes:"), cyan(notes), "\n")
+  cat("\n ", silver("Notes:"), cyan(notes0), "\n")
 
 } # music::cplot.piano
