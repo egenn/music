@@ -9,7 +9,9 @@ is_macos <- length(grep("darwin", sessionInfo()$platform)) == 1
 freq <- note2freq(note = "A4")
 
 # freq2wave
-wave <- freq2wave(frequency = freq, plot = TRUE, duration = .4)
+wave <- freq2wave(frequency = freq, plot = TRUE, duration = .1,
+                  attack.time = 5,
+                  inner.release.time = 5)
 
 # Build
 buildScale()
