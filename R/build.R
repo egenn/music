@@ -74,14 +74,14 @@ buildScale <- function(root, scale = "minor",
   .notes <- .allnotes[.scale.pos]
   if (descending) .notes <- rev(.notes)
   if (play) playNote(.notes, ...)
+  .notes1 <- if (formatNotation) formatNotation(.notes) else .notes
   if (plot) {
     cat(blue$bold("  ", root, scale, "scale\n"))
-    cplot.piano(.notes)
-    return(invisible(.notes))
+    cplot.piano(.notes1)
+    return(invisible(.notes1))
   }
 
-  if (formatNotation) .notes <- formatNotation(.notes)
-  .notes
+  .notes1
 
 } # music::buildScale
 
@@ -160,14 +160,14 @@ buildChord <- function(root, chord = "minor",
   .chord.pos <- cumsum(c(root.pos, chordSteps[[chord]]))
   .chord <- .allnotes[.chord.pos]
   if (play) playChord(.chord, ...)
+  .chord1 <- if (formatNotation) formatNotation(.chord) else .chord
   if (plot) {
     cat(blue$bold("  ", root, chord, "chord\n"))
-    cplot.piano(.chord)
-    return(invisible(.chord))
+    cplot.piano(.chord1)
+    return(invisible(.chord1))
   }
 
-  if (formatNotation) formatNotation(.chord)
-  .chord
+  .chord1
 
 } # music::buildChord
 
