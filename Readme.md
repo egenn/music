@@ -6,11 +6,11 @@ _A little music theory in R_
 Build, play, and visualize scales, chords, and chord progressions
 
 _ASCII piano console plots:_  
-<img align = "center" src="http://egenn.github.io/imgs/music_cplot.png" width="600">
+<img align = "center" src="https://egenn.github.io/imgs/music_cplot.png" width="600">
 
 
 _Waveform time series plots:_  
-<img align = "center" src="http://egenn.github.io/imgs/music_mplot_B4minor.png" width="600">
+<img align = "center" src="https://egenn.github.io/imgs/music_mplot_B4minor.png" width="600">
 
 
 ## Installation
