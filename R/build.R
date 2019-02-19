@@ -41,6 +41,7 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #' @param descending Logical: If TRUE, return notes in descending order, otherwise in ascending
 #' Default = FALSE
 #' @param play Logical: If TRUE, play scale using \link{playNote}
+#' @param pairs Logical: If TRUE and \code{play = TRUE}, play the root note along with each other note, in sequence
 #' @param plot Logical: If TRUE, plot scale notes using \link{cplot.piano}
 #' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
 #' to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")
@@ -57,6 +58,7 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 buildScale <- function(root, scale = "minor",
                        descending = FALSE,
                        play = FALSE,
+                       pairs = FALSE,
                        plot = FALSE,
                        formatNotation = TRUE, ...) {
 
@@ -73,7 +75,16 @@ buildScale <- function(root, scale = "minor",
 
   .notes <- .allnotes[.scale.pos]
   if (descending) .notes <- rev(.notes)
-  if (play) playNote(.notes, ...)
+
+  if (play) {
+    if (!pairs) {
+      playNote(.notes, ...)
+    } else {
+      .progression <- lapply(seq(.notes)[-1], function(i) strings(paste(root, .notes[i])))
+      playProgression(.progression, ...)
+    }
+  }
+
   .notes1 <- if (formatNotation) formatNotation(.notes) else .notes
   if (plot) {
     cat(blue$bold("  ", root, scale, "scale\n"))
@@ -166,7 +177,6 @@ buildChord <- function(root, chord = "minor",
     cplot.piano(.chord1)
     return(invisible(.chord1))
   }
-
   .chord1
 
 } # music::buildChord
