@@ -2,20 +2,34 @@
 % Please edit documentation in R/note2freq.R
 \name{note2freq}
 \alias{note2freq}
-\title{Convert musical notes to their frequencies}
+\title{Convert musical notes to frequencies}
 \usage{
-note2freq(note, A4 = 440, default.octave = 4)
+note2freq(note, tuning = c("12ET", "custom"), custom.ratios = c(1,
+  16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8, 2),
+  A4 = 440, custom.root = "C", default.octave = 4)
 }
 \arguments{
 \item{note}{String: Note(s) to convert to frequencies}
 
+\item{tuning}{String: "12ET": 12-note equal temperament, "custom": Intonation defined by \code{customRatios}}
+
+\item{custom.ratios}{Numeric, vector, length 13: Custom ratios for a 12-note scale, starting with 1 (root)
+and ending in 2 (octave) to use when \code{tuning = "custom"}. The A4 note will be set to \code{A4} Hz and the
+rest of the frequencies will be built based on these ratios and the \code{customRoot}}
+
 \item{A4}{Float: Frequency for A4. Default = 440}
+
+\item{custom.root}{String: Root note for just intonation (\code{tuning = "custom"}). Default = "C"}
 
 \item{default.octave}{Integer: If \code{note} is provided without octave number (e.g. "C"), default to this
 octave. Default = 4}
 }
 \description{
-Convert musical notes to their frequencies
+Convert notes to frequencies
+}
+\details{
+The intervals used for Just intonation are:
+\code{c(1, 16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8, 2)}
 }
 \author{
 Efstathios D. Gennatas

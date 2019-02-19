@@ -8,5 +8,7 @@
 The music package allows you to build, play, and visualize scales, chords, and chord progression.
 For playback, \pkg{music} builts waveforms as matrices and passes them to the \pkg{audio} package which
 interfaces with the system's audio driver.
-The notation and frequencies used throughout the package are based on twelve-tone equal temperament tuning.
+The default notation and frequencies used throughout the package are based on twelve-tone equal temperament tuning
+(12ET). Custom intonations can be defined. See \link{note2freq}.
+A4 defaults to 440Hz, and can be changed with the 'A4' argument.
 }

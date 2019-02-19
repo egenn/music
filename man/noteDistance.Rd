@@ -4,15 +4,13 @@
 \alias{noteDistance}
 \title{Note distance in semitones}
 \usage{
-noteDistance(notes, verbose = TRUE)
+noteDistance(notes)
 }
 \arguments{
 \item{notes}{String, vector: Notes in form \code{c("C4", "Eb4", "Gb4")}}
-
-\item{verbose}{Logical: If TRUE, print to console}
 }
 \value{
-Vector of length \code{1 - length(notes)} with semitone distances between notes
+Vector of length \code{length(notes)} with semitone distances between successive notes
 }
 \description{
 Calculates note distance in semitones

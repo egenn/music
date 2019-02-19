@@ -6,7 +6,8 @@
 \usage{
 playProgression(progression, oscillator = c("sine", "square", "saw",
   "triangle"), duration = 1, BPM = 120, sample.rate = 44100,
-  attack.time = 50, inner.release.time = 50, plot = FALSE)
+  attack.time = 50, inner.release.time = 50, A4 = 440,
+  plot = FALSE, ...)
 }
 \arguments{
 \item{progression}{List of string vectors: Each element of the list is a chord.
@@ -23,9 +24,13 @@ e.g. output of \link{buildProgression}}
 \item{attack.time}{Integer: Attack time. Default = 50 (Helps prevent popping)}
 
 \item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-Deefault = 50 (Also helps prevent popping)}
+Default = 50 (Also helps prevent popping)}
+
+\item{A4}{Float: Frequency for A4. Default = 440}
 
 \item{plot}{Logical. If TRUE, plot each chord in the progression using \link{cplot.piano}}
+
+\item{...}{Additional arguments to pass to \link{note2freq}}
 }
 \description{
 Play Progression

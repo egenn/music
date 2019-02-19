@@ -6,7 +6,7 @@
 \usage{
 playNote(note, oscillator = "sine", duration = rep(1, length(note)),
   BPM = 120, sample.rate = 44100, attack.time = 50,
-  inner.release.time = 50, plot = FALSE)
+  inner.release.time = 50, A4 = 440, plot = FALSE, ...)
 }
 \arguments{
 \item{note}{String, Vector: Note(s) to be played, e.g. c("Ab4", "B4")}
@@ -22,10 +22,14 @@ playNote(note, oscillator = "sine", duration = rep(1, length(note)),
 \item{attack.time}{Integer: Attack time. Default = 50 (Helps prevent popping)}
 
 \item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-Deefault = 50 (Also helps prevent popping)}
+Default = 50 (Also helps prevent popping)}
+
+\item{A4}{Float: Frequency for A4. Default = 440}
 
 \item{plot}{Logical: If TRUE, plot notes using \link{cplot.piano}. This support only two octaves;
 do not try plotting if your notes span more than two octaves.}
+
+\item{...}{Additional arguments to pass to \link{note2freq}}
 }
 \description{
 Play Note

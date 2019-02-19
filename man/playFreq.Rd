@@ -22,7 +22,7 @@ playFreq(frequency, oscillator = "sine", duration = rep(1,
 \item{attack.time}{Integer: Attack time. Default = 50 (Helps prevent popping)}
 
 \item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-Deefault = 50 (Also helps prevent popping)}
+Default = 50 (Also helps prevent popping)}
 
 \item{plot}{Logical: If TRUE, plot waveform}
 }

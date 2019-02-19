@@ -5,7 +5,7 @@
 \title{Build Scale}
 \usage{
 buildScale(root, scale = "minor", descending = FALSE, play = FALSE,
-  plot = FALSE, formatNotation = TRUE, ...)
+  pairs = FALSE, plot = FALSE, formatNotation = TRUE, ...)
 }
 \arguments{
 \item{root}{String: Root note.  e.g. "C4"}
@@ -16,6 +16,8 @@ buildScale(root, scale = "minor", descending = FALSE, play = FALSE,
 Default = FALSE}
 
 \item{play}{Logical: If TRUE, play scale using \link{playNote}}
+
+\item{pairs}{Logical: If TRUE and \code{play = TRUE}, play the root note along with each other note, in sequence}
 
 \item{plot}{Logical: If TRUE, plot scale notes using \link{cplot.piano}}
 

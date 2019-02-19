@@ -6,7 +6,8 @@
 \usage{
 playChord(chord, type = c("harmonic", "ascending", "descending"),
   oscillator = "sine", duration = 1, sample.rate = 44100,
-  attack.time = 50, inner.release.time = 50, plot = FALSE)
+  attack.time = 50, inner.release.time = 50, A4 = 440,
+  plot = FALSE, ...)
 }
 \arguments{
 \item{chord}{String, vector: Notes making up chord. e.g. c("A4", "C5", "E5").
@@ -23,9 +24,13 @@ e.g. output of \link{buildChord}}
 \item{attack.time}{Integer: Attack time. Default = 50 (Helps prevent popping)}
 
 \item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-Deefault = 50 (Also helps prevent popping)}
+Default = 50 (Also helps prevent popping)}
+
+\item{A4}{Float: Frequency for A4. Default = 440}
 
 \item{plot}{Logical: If TRUE, plot chord using \link{cplot.piano}}
+
+\item{...}{Additional arguments to pass to \link{note2freq}}
 }
 \value{
 The constructed waveform (invisibly)
