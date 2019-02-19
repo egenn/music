@@ -1,11 +1,11 @@
 Package: music
 Type: Package
-Title: Music Theory
+Title: Learn and Experiment with Music Theory
 Version: 0.1.0
 Authors@R: person(given = "Efstathios D.", family = "Gennatas", role = c("aut", "cre"), email = "Efstathios.Gennatas@ucsf.edu")
 Author: Efstathios D. Gennatas [aut, cre]
 Maintainer: Efstathios D. Gennatas <Efstathios.Gennatas@ucsf.edu>
-Description: The music package is an aid for learning and using music theory. You can build chords, scales, and chord progressions. It includes functions to visualize notes on a piano using ASCII plots in the console and to plot waveforms using base graphics. It allows playback of notes and chords using the 'audio' package.
+Description: An aid for learning and using music theory. You can build chords, scales, and chord progressions using 12-note equal temperament tuning (12-ET) or user-defined custom intonations. Includes functions to visualize notes on a piano using ASCII plots in the console and to plot waveforms using base graphics. It allows simple playback of notes and chords using the 'audio' package.
 Imports: graphics, utils, audio, crayon
 License: GPL (>=3)
 URL: https://github.com/egenn/music
