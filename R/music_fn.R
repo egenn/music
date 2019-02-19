@@ -51,28 +51,21 @@ formatNote <- function(notes, default.octave = 4) {
 #' Calculates note distance in semitones
 #'
 #' @param notes String, vector: Notes in form \code{c("C4", "Eb4", "Gb4")}
-#' @param verbose Logical: If TRUE, print to console
-#' @return Vector of length \code{1 - length(notes)} with semitone distances between notes
+#' @return Vector of length \code{length(notes)} with semitone distances between successive notes
 #' @examples
 #' noteDistance(strings("C4 Eb4 Gb4 Bb4"))
 #' @author Efstathios D. Gennatas
 #' @export
 
-noteDistance <- function(notes, verbose = TRUE) {
+noteDistance <- function(notes) {
 
   notes <- formatNote(notes)
-
   .diff <- diff(pos[notes])
+  .diff <- c(0, .diff)
+  names(.diff)[1] <- notes[1]
+  .diff
 
-  if (verbose) {
-    .diff1 <- c(0, .diff)
-    names(.diff1)[1] <- notes[1]
-    print(.diff1)
-  }
-
-  invisible(.diff)
-
-} # apollo:noteDistance
+} # music:noteDistance
 
 
 #' Separate notes into vector of strings
@@ -93,16 +86,22 @@ strings <- function(x, sep = " ") {
 
   strsplit(x, split = sep)[[1]]
 
-} # apollo::strings
+} # music::strings
 
 
 #' Format Notation
 #'
-#' Changes flats to sharps if a note of same letter is already present in the sequence.
+#' Converts the internal note representation which uses only flats, to the notation
+#' commonly used to write scales and chords, where a mix of sharps and flats is used to avoid
+#' repeating the same letter note. (e.g. \code{"G#5" "A5"}, instead of \code{"Ab5" "A5"})
 #' e.g. convert the C4 Lydian from:
 #' "C4"  "D4"  "E4"  "Gb4" "G4"  "A4"  "B4"  "C5"
 #' to:
 #' "C4"  "D4"  "E4"  "F#4" "G4"  "A4"  "B4"  "C5"
+#' or convert the A4 major from:
+#' "A4"  "B4"  "Db5" "D5"  "E5"  "Gb5" "Ab5" "A5"
+#' to:
+#' "A4"  "B4"  "C#5" "D5"  "E5"  "F#5" "G#5" "A5"
 #'
 #' @param notes String, vector: Notes to format
 #' @author Efstathios D. Gennatas
@@ -110,8 +109,9 @@ strings <- function(x, sep = " ") {
 
 formatNotation <- function(notes) {
 
-  # Get letters
+  note.letters <- LETTERS[seq(7)]
 
+  # Get letters
   a <- 1
   while (a < length(notes)) {
     i <- a
@@ -122,7 +122,6 @@ formatNotation <- function(notes) {
       note1 <- gsub(".$", "", notes[i])
       note2 <- gsub(".$", "", notes[.match])
       index <- c(i, .match)
-      # gsub(".$", "", notes[i]) != gsub(".$", "", notes[.match])
       note1 != note2
     } else {
       FALSE
@@ -133,7 +132,9 @@ formatNotation <- function(notes) {
       .change <- index[is.b]
       note.tochange <- notes[.change]
       octave <- substring(note.tochange, nchar(note.tochange))
-      new.note <- paste0(LETTERS[which(LETTERS == .notes[.change]) - 1], "#", octave)
+      new.note.letter <- note.letters[which(note.letters == .notes[.change]) - 1]
+      if (length(new.note.letter) == 0) new.note.letter <- "G"
+      new.note <- paste0(new.note.letter, "#", octave)
       notes[.change] <- new.note
     }
   }
