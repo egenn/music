@@ -20,6 +20,7 @@ buildScale("G4", "minor", plot = TRUE)
 buildScale("B4", "minor", descending = TRUE, play = is_macos)
 Ab4minor <- buildChord("Ab4", "minor", plot = TRUE, play = is_macos)
 A4minor_progression <- buildProgression("A4", "minor", plot = TRUE, play = is_macos)
+buildScale("A4", "major")
 
 # Play
 if (is_macos) {
@@ -49,3 +50,18 @@ mplot(rnorm(200), main = "rnorm")
 formatNotation(c("C4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
 formatNotation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
 formatNotation(c("Db4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
+
+# Custom tuning
+playFreq(note2freq(buildScale("C4", "major"), tuning = "12ET"))
+playFreq(note2freq(buildScale("C4", "major"), tuning = "custom",
+          custom.ratios = c(1, 1.05, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 1.95, 2)))
+playFreq(note2freq(buildScale("C4", "major"), tuning = "custom",
+                   custom.ratios = seq(1, 2, length.out = 13)))
+
+note2freq(buildScale("C4", "major"), tuning = "12ET")
+note2freq(buildScale("C4", "major"), tuning = "custom",
+          custom.ratios = seq(1, 2, length.out = 13))
+
+buildScale("C5", "major", tuning = "12ET", play = TRUE, pairs = TRUE)
+buildScale("C5", "major", tuning = "custom", play = TRUE, pairs = TRUE,
+           custom.ratios = seq(1, 2, length.out = 13))
