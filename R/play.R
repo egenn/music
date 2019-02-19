@@ -31,6 +31,7 @@ playWave <- function(wave,
 
 #' Play frequency
 #'
+#' @inheritParams note2freq
 #' @param frequency Numeric, Vector: Frequency / frequencies to play
 #' @param oscillator String: "sine", "square", "saw". Default = "sine"
 #' @param duration Float: Note duration in beats. Default = 1
@@ -38,7 +39,7 @@ playWave <- function(wave,
 #' @param sample.rate Integer: Sample rate. Default = 44100
 #' @param attack.time Integer: Attack time. Default = 50 (Helps prevent popping)
 #' @param inner.release.time Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-#' Deefault = 50 (Also helps prevent popping)
+#' Default = 50 (Also helps prevent popping)
 #' @param plot Logical: If TRUE, plot waveform
 #' @examples
 #' \dontrun{
@@ -73,9 +74,11 @@ playFreq <- function(frequency,
 #' Play Note
 #'
 #' @inheritParams playFreq
+#' @inheritParams note2freq
 #' @param note String, Vector: Note(s) to be played, e.g. c("Ab4", "B4")
 #' @param plot Logical: If TRUE, plot notes using \link{cplot.piano}. This support only two octaves;
 #' do not try plotting if your notes span more than two octaves.
+#' @param ... Additional arguments to pass to \link{note2freq}
 #' @examples
 #' \dontrun{
 #' playNote("B4")
@@ -90,9 +93,11 @@ playNote <- function(note,
                      sample.rate = 44100,
                      attack.time = 50,
                      inner.release.time = 50,
-                     plot = FALSE) {
+                     A4 = 440,
+                     plot = FALSE, ...) {
 
-  freqs <- note2freq(note)
+  freqs <- note2freq(note,
+                     A4 = A4, ...)
 
   if (plot) cplot.piano(note)
 
@@ -109,7 +114,7 @@ playNote <- function(note,
 
 #' Play Chord
 #'
-#' @inheritParams playFreq
+#' @inheritParams playNote
 #' @param chord String, vector: Notes making up chord. e.g. c("A4", "C5", "E5").
 #' e.g. output of \link{buildChord}
 #' @param type String: "harmonic", "ascending", "descending". Default = "harmonic"
@@ -129,11 +134,12 @@ playChord <- function(chord,
                       sample.rate = 44100,
                       attack.time = 50,
                       inner.release.time = 50,
-                      plot = FALSE) {
+                      A4 = 440,
+                      plot = FALSE, ...) {
 
   type <- match.arg(type)
 
-  wave <- lapply(chord, function(i) freq2wave(note2freq(i),
+  wave <- lapply(chord, function(i) freq2wave(note2freq(i, A4 = A4, ...),
                                               oscillator = oscillator,
                                               duration = duration,
                                               sample.rate = sample.rate,
@@ -154,7 +160,7 @@ playChord <- function(chord,
 
 #' Play Progression
 #'
-#' @inheritParams playFreq
+#' @inheritParams playNote
 #' @param progression List of string vectors: Each element of the list is a chord.
 #' e.g. output of \link{buildProgression}
 #' @param plot Logical. If TRUE, plot each chord in the progression using \link{cplot.piano}
@@ -172,12 +178,13 @@ playProgression <- function(progression,
                             sample.rate = 44100,
                             attack.time = 50,
                             inner.release.time = 50,
-                            plot = FALSE) {
+                            A4 = 440,
+                            plot = FALSE, ...) {
 
   oscillator <- match.arg(oscillator)
   wave <- lapply(progression, function(i)
     do.call(cbind,
-            lapply(i, function(j) freq2wave(note2freq(j),
+            lapply(i, function(j) freq2wave(note2freq(j, A4 = A4, ...),
                                             oscillator = oscillator,
                                             duration = duration,
                                             BPM = BPM,
