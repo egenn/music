@@ -79,8 +79,8 @@ noteDistance <- function(notes) {
 #' @param sep String: the character that separates notes in \code{x}. Default = " "
 #' @examples
 #' strings("C4 Eb4 Gb4 Bb4")
-#' @export
 #' @author Efstathios D. Gennatas
+#' @export
 
 strings <- function(x, sep = " ") {
 
@@ -104,6 +104,8 @@ strings <- function(x, sep = " ") {
 #' "A4"  "B4"  "C#5" "D5"  "E5"  "F#5" "G#5" "A5"
 #'
 #' @param notes String, vector: Notes to format
+#' @examples
+#' formatNotation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
 #' @author Efstathios D. Gennatas
 #' @export
 
