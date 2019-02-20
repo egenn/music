@@ -26,7 +26,7 @@ e.g. output of \link{buildProgression}}
 \item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
 Default = 50 (Also helps prevent popping)}
 
-\item{A4}{Float: Frequency for A4. Default = 440}
+\item{A4}{Float: Frequency for A4 in Hz. Default = 440}
 
 \item{plot}{Logical. If TRUE, plot each chord in the progression using \link{cplot.piano}}
 

@@ -24,7 +24,7 @@ playNote(note, oscillator = "sine", duration = rep(1, length(note)),
 \item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
 Default = 50 (Also helps prevent popping)}
 
-\item{A4}{Float: Frequency for A4. Default = 440}
+\item{A4}{Float: Frequency for A4 in Hz. Default = 440}
 
 \item{plot}{Logical: If TRUE, plot notes using \link{cplot.piano}. This support only two octaves;
 do not try plotting if your notes span more than two octaves.}

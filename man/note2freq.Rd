@@ -17,7 +17,7 @@ note2freq(note, tuning = c("12ET", "custom"), custom.ratios = c(1,
 and ending in 2 (octave) to use when \code{tuning = "custom"}. The A4 note will be set to \code{A4} Hz and the
 rest of the frequencies will be built based on these ratios and the \code{customRoot}}
 
-\item{A4}{Float: Frequency for A4. Default = 440}
+\item{A4}{Float: Frequency for A4 in Hz. Default = 440}
 
 \item{custom.root}{String: Root note for just intonation (\code{tuning = "custom"}). Default = "C"}
 
