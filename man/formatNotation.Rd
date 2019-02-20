@@ -22,6 +22,9 @@ or convert the A4 major from:
 to:
 "A4"  "B4"  "C#5" "D5"  "E5"  "F#5" "G#5" "A5"
 }
+\examples{
+formatNotation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
+}
 \author{
 Efstathios D. Gennatas
 }

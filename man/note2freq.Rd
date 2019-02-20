@@ -27,9 +27,8 @@ octave. Default = 4}
 \description{
 Convert notes to frequencies
 }
-\details{
-The intervals used for Just intonation are:
-\code{c(1, 16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8, 2)}
+\examples{
+note2freq(buildScale("B4", "minor"))
 }
 \author{
 Efstathios D. Gennatas
