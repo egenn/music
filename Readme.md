@@ -14,11 +14,18 @@ _Waveform time series plots:_
 
 
 ## Installation
-### Install dependencies, if not already installed:
+You can either install from [CRAN](https://cran.r-project.org/package=music) or grab the latest version directly from this repository.
+### Install from CRAN:
+```r
+install.packages("music")
+```
+
+### Install latest version from GitHub:
+Install dependencies, if not already installed:
 ```r
 install.packages(c("audio", "crayon", "devtools"))
 ```
-### Install latest package version using devtools:
+Install using devtools:
 ```r
 devtools::install_github("egenn/music")
 ```
