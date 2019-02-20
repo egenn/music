@@ -24,9 +24,6 @@ to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4"
 \description{
 Build chord
 }
-\details{
-For convenience and consistency, all sharps and flats are denoted using flats
-}
 \examples{
 buildChord("C4", "minor")
 buildChord("A4", "sus2", plot = TRUE)

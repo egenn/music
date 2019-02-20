@@ -35,7 +35,6 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #'
 #' Build scale
 #'
-#' For convenience and consistency, all sharps and flats are denoted using flats
 #' @param root String: Root note.  e.g. "C4"
 #' @param scale String: Scale to build. Default = "minor"
 #' @param descending Logical: If TRUE, return notes in descending order, otherwise in ascending
@@ -137,7 +136,6 @@ chords <- list()
 #'
 #' Build chord
 #'
-#' For convenience and consistency, all sharps and flats are denoted using flats
 #' @param root String: Root note
 #' @param chord String: Chord to build. Default = "minor"
 #' @param play Logical: If TRUE, play chord using \link{playChord}

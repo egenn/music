@@ -29,9 +29,6 @@ to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4"
 \description{
 Build scale
 }
-\details{
-For convenience and consistency, all sharps and flats are denoted using flats
-}
 \examples{
 buildScale("C4", "minor")
 buildScale("B4", "minor", descending = TRUE, plot = TRUE)
