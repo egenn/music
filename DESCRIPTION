@@ -1,7 +1,7 @@
 Package: music
 Type: Package
 Title: Learn and Experiment with Music Theory
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person(given = "Efstathios D.", family = "Gennatas", role = c("aut", "cre"), email = "Efstathios.Gennatas@ucsf.edu")
 Author: Efstathios D. Gennatas [aut, cre]
 Maintainer: Efstathios D. Gennatas <Efstathios.Gennatas@ucsf.edu>

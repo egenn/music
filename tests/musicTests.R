@@ -35,12 +35,12 @@ if (is_macos) {
 noteDistance(strings("C4 Eb4 Gb4 Bb4"))
 
 # All together now ----
-mplot(freq2wave(note2freq(buildChord("C4", "minor")),
+mplot(freq2wave(note2freq(buildChord("A4", "sus2")),
                 oscillator = "sine",
-                duration = .05,
+                duration = .04,
                 attack.time = 5,
                 inner.release.time = 5),
-      main = "C4 minor")
+      main = "A4 sus2")
 
 # More coverage ----
 formatNote(c("D#4", "Ebb"))
