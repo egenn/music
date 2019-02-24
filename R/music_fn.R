@@ -113,34 +113,37 @@ formatNotation <- function(notes) {
 
   note.letters <- LETTERS[seq(7)]
 
-  # Get letters
-  a <- 1
-  while (a < length(notes)) {
-    i <- a
-    a <- a + 1
-    .notes <- substring(notes, 1, 1)
-    .match <- which(.notes[i] == .notes[-i])[1] + 1
-    .diff <- if (!is.na(.match)) {
-      note1 <- gsub(".$", "", notes[i])
-      note2 <- gsub(".$", "", notes[.match])
-      index <- c(i, .match)
-      note1 != note2
-    } else {
-      FALSE
+  fN <- function(notes) {
+    a <- 1
+    while (a < length(notes)) {
+      i <- a
+      a <- a + 1
+      .notes <- substring(notes, 1, 1)
+      .match <- which(.notes[i] == .notes[-i])[1] + 1
+      .diff <- if (!is.na(.match)) {
+        note1 <- gsub(".$", "", notes[i])
+        note2 <- gsub(".$", "", notes[.match])
+        index <- c(i, .match)
+        note1 != note2
+      } else {
+        FALSE
+      }
+      if (.diff) {
+        # find which is b
+        is.b <- grep(pattern = "b", ignore.case = FALSE, x = c(note1, note2))
+        .change <- index[is.b]
+        note.tochange <- notes[.change]
+        octave <- substring(note.tochange, nchar(note.tochange))
+        new.note.letter <- note.letters[which(note.letters == .notes[.change]) - 1]
+        if (length(new.note.letter) == 0) new.note.letter <- "G"
+        new.note <- paste0(new.note.letter, "#", octave)
+        notes[.change] <- new.note
+      }
     }
-    if (.diff) {
-      # find which is b
-      is.b <- grep(pattern = "b", ignore.case = FALSE, x = c(note1, note2))
-      .change <- index[is.b]
-      note.tochange <- notes[.change]
-      octave <- substring(note.tochange, nchar(note.tochange))
-      new.note.letter <- note.letters[which(note.letters == .notes[.change]) - 1]
-      if (length(new.note.letter) == 0) new.note.letter <- "G"
-      new.note <- paste0(new.note.letter, "#", octave)
-      notes[.change] <- new.note
-    }
+    notes
   }
+  # Get letters
 
-  notes
+  fN(fN(notes))
 
 } # music::formatNotation
