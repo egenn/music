@@ -33,7 +33,7 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 
 #' Build Scale
 #'
-#' Build scale
+#' Build Scale / Mode
 #'
 #' @param root String: Root note.  e.g. "C4"
 #' @param scale String: Scale to build. Default = "minor"
@@ -133,8 +133,6 @@ chordSteps <- list(major = c(4, 3),
 chords <- list()
 
 #' Build Chord
-#'
-#' Build chord
 #'
 #' @param root String: Root note
 #' @param chord String: Chord to build. Default = "minor"
