@@ -21,13 +21,10 @@ install.packages("music")
 ```
 
 ### Install latest version from GitHub:
-Install dependencies, if not already installed:
+Install using remotes:
 ```r
-install.packages(c("audio", "crayon", "devtools"))
-```
-Install using devtools:
-```r
-devtools::install_github("egenn/music")
+install.packages("remotes")
+remotes::install_github("egenn/music")
 ```
 
 ## Documentation
