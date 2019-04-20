@@ -2,9 +2,8 @@ Package: music
 Type: Package
 Title: Learn and Experiment with Music Theory
 Version: 0.1.1
-Authors@R: person(given = "Efstathios D.", family = "Gennatas", role = c("aut", "cre"), email = "Efstathios.Gennatas@ucsf.edu")
-Author: Efstathios D. Gennatas [aut, cre]
-Maintainer: Efstathios D. Gennatas <Efstathios.Gennatas@ucsf.edu>
+Authors@R: person(given = "Efstathios D.", family = "Gennatas", role = c("aut", "cre"), email = "gennatas@gmail.com")
+Maintainer: Efstathios D. Gennatas <gennatas@gmail.com>
 Description: An aid for learning and using music theory. You can build chords, scales, and chord progressions using 12-note equal temperament tuning (12-ET) or user-defined tuning. Includes functions to visualize notes on a piano using ASCII plots in the console and to plot waveforms using base graphics. It allows simple playback of notes and chords using the 'audio' package.
 Imports: graphics, utils, audio, crayon
 License: GPL (>=3)
