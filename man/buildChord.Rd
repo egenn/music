@@ -22,7 +22,7 @@ to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4"
 \item{...}{Additional arguments to be passed to \link{playChord} if \code{play = TRUE}}
 }
 \description{
-Build chord
+Build Chord
 }
 \examples{
 buildChord("C4", "minor")
