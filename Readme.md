@@ -1,4 +1,4 @@
-**music** R package [![CRAN](https://www.r-pkg.org/badges/version/music)](https://cran.r-project.org/package=music) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.com/egenn/music.svg?branch=master)](https://travis-ci.com/egenn/music) [![codecov](https://codecov.io/gh/egenn/music/branch/master/graph/badge.svg)](https://codecov.io/gh/egenn/music)
+**music** R package [![CRAN](https://www.r-pkg.org/badges/version/music)](https://cran.r-project.org/package=music) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.com/egenn/music.svg?branch=master)](https://travis-ci.com/egenn/music)  [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/egenn/music?branch=master&svg=true)](https://ci.appveyor.com/project/egenn/music) [![codecov](https://codecov.io/gh/egenn/music/branch/master/graph/badge.svg)](https://codecov.io/gh/egenn/music)
 ======================
 _A little music theory in R_
 
