@@ -7,5 +7,6 @@ r_packages:
   - crayon
   - audio
   - covr
+r_check_args: --no-manual
 after_success:
   - Rscript -e 'library(covr); codecov()'
