@@ -1,6 +1,7 @@
 language: r
 os:
   - osx
+  - linux
 cache: packages
 r_packages:
   - crayon
