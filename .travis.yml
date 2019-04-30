@@ -1,12 +1,12 @@
 language: r
-os:
-  - osx
-  - linux
 cache: packages
-r_packages:
-  - crayon
-  - audio
-  - covr
-r_check_args: --no-manual
-after_success:
-  - Rscript -e 'library(covr); codecov()'
+r_check_args: --as-cran
+
+matrix:
+  include:
+    - os: linux
+    - os: osx
+      r_check_args: --no-manual
+      r_packages:
+        - covr
+      after_success: - Rscript -e 'covr::codecov(quiet=FALSE)'
