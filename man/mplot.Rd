@@ -4,11 +4,29 @@
 \alias{mplot}
 \title{Plot waveform}
 \usage{
-mplot(x, type = "l", main = NULL, legend = TRUE, lwd = 1,
-  pty = "m", bg = "black", fg = "gray50", col = "cyan",
-  col.axis = "gray50", col.lab = "gray50", col.main = "gray80",
-  col.legend = "white", tcl = 0.3, xaxt = "s", yaxt = "s",
-  new = FALSE, mgp = c(2, 0, 0), mar = NULL, oma = NULL, ...)
+mplot(
+  x,
+  type = "l",
+  main = NULL,
+  legend = TRUE,
+  lwd = 1,
+  pty = "m",
+  bg = "black",
+  fg = "gray50",
+  col = "cyan",
+  col.axis = "gray50",
+  col.lab = "gray50",
+  col.main = "gray80",
+  col.legend = "white",
+  tcl = 0.3,
+  xaxt = "s",
+  yaxt = "s",
+  new = FALSE,
+  mgp = c(2, 0, 0),
+  mar = NULL,
+  oma = NULL,
+  ...
+)
 }
 \arguments{
 \item{x}{Input}

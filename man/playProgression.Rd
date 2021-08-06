@@ -4,10 +4,18 @@
 \alias{playProgression}
 \title{Play Progression}
 \usage{
-playProgression(progression, oscillator = c("sine", "square", "saw",
-  "triangle"), duration = 1, BPM = 120, sample.rate = 44100,
-  attack.time = 50, inner.release.time = 50, A4 = 440,
-  plot = FALSE, ...)
+playProgression(
+  progression,
+  oscillator = c("sine", "square", "saw", "triangle"),
+  duration = 1,
+  BPM = 120,
+  sample.rate = 44100,
+  attack.time = 50,
+  inner.release.time = 50,
+  A4 = 440,
+  plot = FALSE,
+  ...
+)
 }
 \arguments{
 \item{progression}{List of string vectors: Each element of the list is a chord.

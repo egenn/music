@@ -4,8 +4,14 @@
 \alias{buildProgression}
 \title{Build Chord Progression}
 \usage{
-buildProgression(root = "A4", scale = "minor", play = FALSE,
-  plot = FALSE, formatNotation = TRUE, ...)
+buildProgression(
+  root = "A4",
+  scale = "minor",
+  play = FALSE,
+  plot = FALSE,
+  formatNotation = TRUE,
+  ...
+)
 }
 \arguments{
 \item{root}{String: Root note. Default = "A4"}

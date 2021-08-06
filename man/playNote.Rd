@@ -4,9 +4,18 @@
 \alias{playNote}
 \title{Play Note}
 \usage{
-playNote(note, oscillator = "sine", duration = rep(1, length(note)),
-  BPM = 120, sample.rate = 44100, attack.time = 50,
-  inner.release.time = 50, A4 = 440, plot = FALSE, ...)
+playNote(
+  note,
+  oscillator = "sine",
+  duration = rep(1, length(note)),
+  BPM = 120,
+  sample.rate = 44100,
+  attack.time = 50,
+  inner.release.time = 50,
+  A4 = 440,
+  plot = FALSE,
+  ...
+)
 }
 \arguments{
 \item{note}{String, Vector: Note(s) to be played, e.g. c("Ab4", "B4")}

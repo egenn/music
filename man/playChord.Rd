@@ -4,10 +4,18 @@
 \alias{playChord}
 \title{Play Chord}
 \usage{
-playChord(chord, type = c("harmonic", "ascending", "descending"),
-  oscillator = "sine", duration = 1, sample.rate = 44100,
-  attack.time = 50, inner.release.time = 50, A4 = 440,
-  plot = FALSE, ...)
+playChord(
+  chord,
+  type = c("harmonic", "ascending", "descending"),
+  oscillator = "sine",
+  duration = 1,
+  sample.rate = 44100,
+  attack.time = 50,
+  inner.release.time = 50,
+  A4 = 440,
+  plot = FALSE,
+  ...
+)
 }
 \arguments{
 \item{chord}{String, vector: Notes making up chord. e.g. c("A4", "C5", "E5").

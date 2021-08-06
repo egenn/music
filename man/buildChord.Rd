@@ -4,8 +4,14 @@
 \alias{buildChord}
 \title{Build Chord}
 \usage{
-buildChord(root, chord = "minor", play = FALSE, plot = FALSE,
-  formatNotation = TRUE, ...)
+buildChord(
+  root,
+  chord = "minor",
+  play = FALSE,
+  plot = FALSE,
+  formatNotation = TRUE,
+  ...
+)
 }
 \arguments{
 \item{root}{String: Root note}

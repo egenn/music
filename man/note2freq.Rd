@@ -4,9 +4,14 @@
 \alias{note2freq}
 \title{Convert musical notes to frequencies}
 \usage{
-note2freq(note, tuning = c("12ET", "custom"), custom.ratios = c(1,
-  16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8, 2),
-  A4 = 440, custom.root = "C", default.octave = 4)
+note2freq(
+  note,
+  tuning = c("12ET", "custom"),
+  custom.ratios = c(1, 16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8, 2),
+  A4 = 440,
+  custom.root = "C",
+  default.octave = 4
+)
 }
 \arguments{
 \item{note}{String: Note(s) to convert to frequencies}

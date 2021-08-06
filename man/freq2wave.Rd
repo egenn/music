@@ -4,9 +4,16 @@
 \alias{freq2wave}
 \title{Frequency to waveform}
 \usage{
-freq2wave(frequency, oscillator = c("sine", "square", "saw", "triangle"),
-  duration = 1, BPM = 120, sample.rate = 44100, attack.time = 50,
-  inner.release.time = 50, plot = FALSE)
+freq2wave(
+  frequency,
+  oscillator = c("sine", "square", "saw", "triangle"),
+  duration = 1,
+  BPM = 120,
+  sample.rate = 44100,
+  attack.time = 50,
+  inner.release.time = 50,
+  plot = FALSE
+)
 }
 \arguments{
 \item{frequency}{Float, vector: Frequency/ies to convert to waveform}

@@ -4,8 +4,16 @@
 \alias{buildScale}
 \title{Build Scale}
 \usage{
-buildScale(root, scale = "minor", descending = FALSE, play = FALSE,
-  pairs = FALSE, plot = FALSE, formatNotation = TRUE, ...)
+buildScale(
+  root,
+  scale = "minor",
+  descending = FALSE,
+  play = FALSE,
+  pairs = FALSE,
+  plot = FALSE,
+  formatNotation = TRUE,
+  ...
+)
 }
 \arguments{
 \item{root}{String: Root note.  e.g. "C4"}
