@@ -57,14 +57,14 @@ playFreq <- function(frequency,
                      inner.release.time = 50,
                      plot = FALSE) {
 
-  wave <- c(mapply(freq2wave,
-                   frequency,
-                   oscillator,
-                   duration,
-                   BPM,
-                   sample.rate,
-                   attack.time,
-                   inner.release.time))
+  wave <- unlist(c(mapply(freq2wave,
+                          frequency,
+                          oscillator,
+                          duration,
+                          BPM,
+                          sample.rate,
+                          attack.time,
+                          inner.release.time)))
 
   if (plot) mplot(wave)
   playWave(wave)
