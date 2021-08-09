@@ -45,6 +45,7 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
 #' to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")
 #' @param ... Additional arguments to be passed to \link{playNote} if \code{play = TRUE}
+#' 
 #' @examples
 #' buildScale("C4", "minor")
 #' buildScale("B4", "minor", descending = TRUE, plot = TRUE)
@@ -141,6 +142,7 @@ chords <- list()
 #' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
 #' to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")
 #' @param ... Additional arguments to be passed to \link{playChord} if \code{play = TRUE}
+#' 
 #' @examples
 #' buildChord("C4", "minor")
 #' buildChord("A4", "sus2", plot = TRUE)
@@ -190,6 +192,7 @@ chordProgression <- list(major = c("major", "minor", "minor", "major", "major", 
 #' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
 #' to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")
 #' @param ... Additional arguments to be passed to \link{playProgression} if \code{ play = TRUE}
+#' 
 #' @examples
 #' buildProgression("C4", "minor")
 #' buildProgression("Bb4", "major")

@@ -9,6 +9,7 @@
 #' @param notes String, vector: Notes to highlight. Default = \code{buildScale("C4", "minor")}
 #' @param blackKey.col Color to use for black keys. Default = "white" for use on a dark terminal.
 #' Set to "black" for use on a light terminal.
+#' 
 #' @export
 #' @examples
 #' cplot.piano(buildScale("B4", "minor"))

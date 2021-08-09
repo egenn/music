@@ -7,6 +7,7 @@
 #' @inheritParams playFreq
 #' @param frequency Float, vector: Frequency/ies to convert to waveform
 #' @param plot Logical: If TRUE, plot wave(s) using \link{mplot}
+#' 
 #' @examples
 #' wave <- freq2wave(note2freq(buildChord("A4", "sus2")))
 #' @export

@@ -20,6 +20,7 @@ names(rt_pos) <- rt_notes
 #' @param custom.root String: Root note for just intonation (\code{tuning = "custom"}). Default = "C"
 #' @param default.octave Integer: If \code{note} is provided without octave number (e.g. "C"), default to this
 #' octave. Default = 4
+#' 
 #' @examples
 #' note2freq(buildScale("B4", "minor"))
 #' @author Efstathios D. Gennatas

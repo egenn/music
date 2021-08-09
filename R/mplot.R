@@ -25,6 +25,7 @@
 #' @param mar Vector, length 4: Margins for \code{par}
 #' @param oma Vector, length 4: The 'oma' param of par
 #' @param ... Additional parameters to pass to \code{plot}
+#' 
 #' @export
 #' @author Efstathios D. Gennatas
 

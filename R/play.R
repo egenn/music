@@ -31,7 +31,6 @@ playWave <- function(wave,
 
 #' Play frequency
 #'
-#' @inheritParams note2freq
 #' @param frequency Numeric, Vector: Frequency / frequencies to play
 #' @param oscillator String: "sine", "square", "saw". Default = "sine"
 #' @param duration Float: Note duration in beats. Default = 1
@@ -41,6 +40,7 @@ playWave <- function(wave,
 #' @param inner.release.time Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
 #' Default = 50 (Also helps prevent popping)
 #' @param plot Logical: If TRUE, plot waveform
+#' 
 #' @examples
 #' \dontrun{
 #' playFreq(440)
