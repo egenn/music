@@ -49,5 +49,5 @@ playNote("B4")
 }
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

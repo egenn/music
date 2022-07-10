@@ -40,5 +40,5 @@ Frequency to waveform
 wave <- freq2wave(note2freq(buildChord("A4", "sus2")))
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

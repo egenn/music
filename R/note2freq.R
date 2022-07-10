@@ -1,6 +1,6 @@
 # note2freq.R
 # ::music::
-# 2019 Efstathios D. Gennatas
+# 2019 E.D. Gennatas lambdamd.org
 
 rt_octave <- c("C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B")
 rt_notes <- c(t(sapply(rt_octave, function(i) paste0(i, -2:8))))[-c(129:132)]
@@ -23,7 +23,7 @@ names(rt_pos) <- rt_notes
 #' 
 #' @examples
 #' note2freq(buildScale("B4", "minor"))
-#' @author Efstathios D. Gennatas
+#' @author E.D. Gennatas
 #' @export
 
 note2freq <- function(note,

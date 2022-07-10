@@ -23,5 +23,5 @@ playWave(freq2wave(440))
 }
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

@@ -36,5 +36,5 @@ Convert notes to frequencies
 note2freq(buildScale("B4", "minor"))
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

@@ -38,5 +38,5 @@ buildChord("B4", "sus2", play = TRUE)
 }
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

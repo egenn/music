@@ -45,5 +45,5 @@ buildScale("B4", "minor", descending = TRUE, play = TRUE, plot TRUE)
 }
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

@@ -23,5 +23,5 @@ to regular notes
 formatNote(c("D#4", "Ebb"))
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

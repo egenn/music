@@ -19,5 +19,5 @@ Calculates note distance in semitones
 noteDistance(strings("C4 Eb4 Gb4 Bb4"))
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

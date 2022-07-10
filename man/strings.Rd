@@ -23,5 +23,5 @@ e.g. \code{playChord(strings("C4 Eb4 G4 D5"))}
 strings("C4 Eb4 Gb4 Bb4")
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

@@ -75,5 +75,5 @@ mplot(
 Plot waveform
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

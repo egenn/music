@@ -1,6 +1,6 @@
 # build.R
 # ::music::
-# 2019 Efstathios D. Gennatas
+# 2019 E.D. Gennatas lambdamd.org
 
 .octave <- c("C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B")
 lapply(.octave, function(i) paste0(i, -2:8))
@@ -53,7 +53,7 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #' buildScale("B4", "minor", descending = TRUE, play = TRUE, plot TRUE)
 #' }
 #' @export
-#' @author Efstathios D. Gennatas
+#' @author E.D. Gennatas
 
 buildScale <- function(root, scale = "minor",
                        descending = FALSE,
@@ -150,7 +150,7 @@ chords <- list()
 #' buildChord("B4", "sus2", play = TRUE)
 #' }
 #' @export
-#' @author Efstathios D. Gennatas
+#' @author E.D. Gennatas
 
 buildChord <- function(root, chord = "minor",
                        play = FALSE,
@@ -200,7 +200,7 @@ chordProgression <- list(major = c("major", "minor", "minor", "major", "major", 
 #' buildProgression("Bb4", "major", play = TRUE, plot = TRUE)
 #' }
 #' @export
-#' @author Efstathios D. Gennatas
+#' @author E.D. Gennatas
 
 buildProgression <- function(root = "A4",
                              scale = "minor",

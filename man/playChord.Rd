@@ -52,5 +52,5 @@ playChord(buildChord("E4", "minor"))
 }
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

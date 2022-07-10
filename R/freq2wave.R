@@ -1,6 +1,6 @@
 # freq2wave.R
 # ::music::
-# 2019 Efstathios D. Gennatas
+# 2019 E.D. Gennatas lambdamd.org
 
 #' Frequency to waveform
 #'
@@ -11,7 +11,7 @@
 #' @examples
 #' wave <- freq2wave(note2freq(buildChord("A4", "sus2")))
 #' @export
-#' @author Efstathios D. Gennatas
+#' @author E.D. Gennatas
 
 freq2wave <- function(frequency,
                       oscillator = c("sine", "square", "saw", "triangle"),

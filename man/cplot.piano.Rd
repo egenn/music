@@ -19,5 +19,5 @@ Build an ASCII plot of notes on a piano
 cplot.piano(buildScale("B4", "minor"))
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

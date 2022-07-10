@@ -1,6 +1,6 @@
 # cplot.piano.R
 # ::music::
-# 2019 Efstathios D. Gennatas
+# 2019 E.D. Gennatas lambdamd.org
 
 #' Console piano plot for notes
 #'
@@ -13,7 +13,7 @@
 #' @export
 #' @examples
 #' cplot.piano(buildScale("B4", "minor"))
-#' @author Efstathios D. Gennatas
+#' @author E.D. Gennatas
 
 cplot.piano <- function(notes = buildScale("C4", "minor"),
                         blackKey.col = "white") {

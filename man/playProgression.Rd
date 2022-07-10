@@ -49,5 +49,5 @@ playProgression(buildProgression("G4", "minor"))
 }
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }

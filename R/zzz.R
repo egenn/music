@@ -1,6 +1,6 @@
 # zzz.R
 # ::music::
-# 2019 Efstathios D. Gennatas egenn.github.io
+# 2019 E.D. Gennatas lambdamd.org
 
 #' \pkg{music}: Learn and use music theory
 #'

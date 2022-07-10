@@ -38,5 +38,5 @@ buildProgression("Bb4", "major", play = TRUE, plot = TRUE)
 }
 }
 \author{
-Efstathios D. Gennatas
+E.D. Gennatas
 }
