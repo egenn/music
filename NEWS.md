@@ -1,8 +1,13 @@
-0.1.2
- - Allow playback with individual note durations
+# News
 
-0.1.1
- - Minor docs update
+## 0.1.2
 
-0.1.0
- - Initial CRAN release
+- Allow playback with individual note durations
+
+## 0.1.1
+
+- Minor docs update
+
+## 0.1.0
+
+- Initial CRAN release
