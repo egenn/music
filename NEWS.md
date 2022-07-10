@@ -1,6 +1,8 @@
-# music News
+0.1.2
+ - Allow playback with individual note durations
 
-E.D. Gennatas lambdamd.org
+0.1.1
+ - Minor docs update
 
-- 2021-08-06 Allows playback with individual note durations
-- 2019-02-20 Initial CRAN release
+0.1.0
+ - Initial CRAN release
