@@ -41,19 +41,19 @@ scaleSteps <- list(major = c(2, 2, 1, 2, 2, 2, 1),
 #' Default = FALSE
 #' @param play Logical: If TRUE, play scale using \link{playNote}
 #' @param pairs Logical: If TRUE and \code{play = TRUE}, play the root note along with each other note, in sequence
-#' @param plot Logical: If TRUE, plot scale notes using \link{cplot.piano}
+#' @param plot Logical: If TRUE, plot scale notes using \link{cplot_piano}
 #' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
 #' to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")
 #' @param ... Additional arguments to be passed to \link{playNote} if \code{play = TRUE}
 #' 
+#' @author E.D. Gennatas
+#' @export
 #' @examples
 #' buildScale("C4", "minor")
 #' buildScale("B4", "minor", descending = TRUE, plot = TRUE)
 #' \dontrun{
 #' buildScale("B4", "minor", descending = TRUE, play = TRUE, plot TRUE)
 #' }
-#' @export
-#' @author E.D. Gennatas
 
 buildScale <- function(root, scale = "minor",
                        descending = FALSE,
@@ -61,39 +61,40 @@ buildScale <- function(root, scale = "minor",
                        pairs = FALSE,
                        plot = FALSE,
                        formatNotation = TRUE, ...) {
-
-  if (missing(root)) {
-    cat(crayon::silver$bold("Available scales:\n"))
-    cat(crayon::cyan$bold(paste(names(scaleSteps), collapse = ", ")), "\n")
-    return(invisible(9))
-  } else {
-    root <- formatNote(root)
-  }
-  scale <- match.arg(scale, names(scaleSteps))
-  root.pos <- pos[root]
-  .scale.pos <- cumsum(c(root.pos, scaleSteps[[scale]]))
-
-  .notes <- .allnotes[.scale.pos]
-  if (descending) .notes <- rev(.notes)
-
-  if (play) {
-    if (!pairs) {
-      playNote(.notes, ...)
+    if (missing(root)) {
+        cat(crayon::silver$bold("Available scales:\n"))
+        cat(crayon::cyan$bold(paste(names(scaleSteps), collapse = ", ")), "\n")
+        return(invisible(9))
     } else {
-      .progression <- lapply(seq(.notes)[-1], function(i) strings(paste(root, .notes[i])))
-      playProgression(.progression, ...)
+        root <- formatNote(root)
     }
-  }
+    scale <- match.arg(scale, names(scaleSteps))
+    root.pos <- pos[root]
+    .scale.pos <- cumsum(c(root.pos, scaleSteps[[scale]]))
 
-  .notes1 <- if (formatNotation) formatNotation(.notes) else .notes
-  if (plot) {
-    cat(blue$bold("  ", root, scale, "scale\n"))
-    cplot.piano(.notes1)
-    return(invisible(.notes1))
-  }
+    .notes <- .allnotes[.scale.pos]
+    if (descending) .notes <- rev(.notes)
 
-  .notes1
+    if (play) {
+        if (!pairs) {
+            playNote(.notes, ...)
+        } else {
+            .progression <- lapply(
+                seq(.notes)[-1],
+                function(i) strings(paste(root, .notes[i]))
+            )
+            playProgression(.progression, ...)
+        }
+    }
 
+    .notes1 <- if (formatNotation) formatNotation(.notes) else .notes
+    if (plot) {
+        cat(blue$bold(" ", root, scale, "scale\n"))
+        cplot_piano(.notes1)
+        return(invisible(.notes1))
+    }
+
+    .notes1
 } # music::buildScale
 
 stepsByDegree <- list(`1` = 0,
@@ -138,10 +139,12 @@ chords <- list()
 #' @param root String: Root note
 #' @param chord String: Chord to build. Default = "minor"
 #' @param play Logical: If TRUE, play chord using \link{playChord}
-#' @param plot Logical: If TRUE, plot chord notes using \link{cplot.piano}
-#' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
-#' to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")
-#' @param ... Additional arguments to be passed to \link{playChord} if \code{play = TRUE}
+#' @param plot Logical: If TRUE, plot chord notes using \link{cplot_piano}
+#' @param formatNotation Logical: If TRUE, format notes to include both flats 
+#' and sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to 
+#' c("F#4", "G4")
+#' @param ... Additional arguments to be passed to \link{playChord} if 
+#' \code{play = TRUE}
 #' 
 #' @examples
 #' buildChord("C4", "minor")
@@ -156,42 +159,50 @@ buildChord <- function(root, chord = "minor",
                        play = FALSE,
                        plot = FALSE,
                        formatNotation = TRUE, ...) {
-
-  if (missing(root)) {
-    cat(crayon::silver$bold("Available chords:\n"))
-    cat(crayon::cyan$bold(paste(names(chordSteps), collapse = ", ")), "\n")
-    return(invisible(9))
-  } else {
-    root <- formatNote(root)
-  }
-  chord <- match.arg(chord, names(chordSteps))
-  root.pos <- pos[root]
-  .chord.pos <- cumsum(c(root.pos, chordSteps[[chord]]))
-  .chord <- .allnotes[.chord.pos]
-  if (play) playChord(.chord, ...)
-  .chord1 <- if (formatNotation) formatNotation(.chord) else .chord
-  if (plot) {
-    cat(blue$bold("  ", root, chord, "chord\n"))
-    cplot.piano(.chord1)
-    return(invisible(.chord1))
-  }
-  .chord1
-
+    if (missing(root)) {
+        cat(crayon::silver$bold("Available chords:\n"))
+        cat(crayon::cyan$bold(paste(names(chordSteps), collapse = ", ")), "\n")
+        return(invisible(9))
+    } else {
+        root <- formatNote(root)
+    }
+    chord <- match.arg(chord, names(chordSteps))
+    root.pos <- pos[root]
+    .chord.pos <- cumsum(c(root.pos, chordSteps[[chord]]))
+    .chord <- .allnotes[.chord.pos]
+    if (play) playChord(.chord, ...)
+    .chord1 <- if (formatNotation) formatNotation(.chord) else .chord
+    if (plot) {
+        cat(blue$bold("  ", root, chord, "chord\n"))
+        cplot_piano(.chord1)
+        return(invisible(.chord1))
+    }
+    .chord1
 } # music::buildChord
 
-
-chordProgression <- list(major = c("major", "minor", "minor", "major", "major", "minor", "diminished"),
-                         minor = c("minor", "diminished", "major", "minor", "minor", "major", "major"))
+chordProgression <- list(
+    major = c(
+        "major", "minor", "minor", "major",
+        "major", "minor", "diminished"
+    ),
+    minor = c(
+        "minor", "diminished", "major", "minor",
+        "minor", "major", "major"
+    )
+)
 
 #' Build Chord Progression
 #'
 #' @param root String: Root note. Default = "A4"
 #' @param scale String: "major" or "minor". Default = "minor"
 #' @param play Logical: If TRUE, play scale using \link{playProgression}
-#' @param plot Logical: If TRUE, plot each chord in the progression using \link{cplot.piano}
-#' @param formatNotation Logical: If TRUE, format notes to include both flats and sharps
-#' to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")
-#' @param ... Additional arguments to be passed to \link{playProgression} if \code{ play = TRUE}
+#' @param plot Logical: If TRUE, plot each chord in the progression using 
+#' \link{cplot_piano}
+#' @param formatNotation Logical: If TRUE, format notes to include both flats a
+#' nd sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to 
+#' c("F#4", "G4")
+#' @param ... Additional arguments to be passed to \link{playProgression} if 
+#' \code{ play = TRUE}
 #' 
 #' @examples
 #' buildProgression("C4", "minor")
@@ -212,17 +223,24 @@ buildProgression <- function(root = "A4",
   .scale <- buildScale(root = root, scale = scale)
   .progression <- chordProgression[[scale]]
   .progression <- c(.progression, .progression[1])
-  .chords <- lapply(seq(.scale), function(i) buildChord(root = .scale[i],
-                                                        chord = .progression[i],
-                                                        formatNotation = formatNotation))
+  .chords <- lapply(
+      seq(.scale),
+      function(i) {
+          buildChord(
+              root = .scale[i],
+              chord = .progression[i],
+              formatNotation = formatNotation
+          )
+      }
+  )
   names(.chords) <- paste0(.scale, .progression)
 
   if (play) playProgression(.chords)
   if (plot) {
-    for (i in seq(.chords)) {
-      cplot.piano(.chords[[i]])
-      cat("\n")
-    }
+      for (i in seq(.chords)) {
+          cplot_piano(.chords[[i]])
+          cat("\n")
+      }
   }
   .chords
 

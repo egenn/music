@@ -6,12 +6,13 @@
 #'
 #' Format notes for use in other \pkg{music} functions
 #'
-#' Converts sharps to flats, adds octave number if missing (Default = 4), and converts (rare) "bb" notes
-#' to regular notes
+#' Converts sharps to flats, adds octave number if missing (Default = 4), 
+#' and converts (rare) "bb" notes to regular notes
 #'
-#' @param notes Vector, String: Input notes in the form \code{c("C4", "D4", "Eb4")}
-#' @param default.octave Integer: Octave to use if missing in \code{notes}. Default = 4; i.e. \code{"C"}
-#' becomes \code{"C4"}
+#' @param notes Vector, String: Input notes in the form 
+#' \code{c("C4", "D4", "Eb4")}
+#' @param default.octave Integer: Octave to use if missing in \code{notes}. 
+#' Default = 4; i.e. \code{"C"} becomes \code{"C4"}
 #' 
 #' @examples
 #' formatNote(c("D#4", "Ebb"))
@@ -53,7 +54,8 @@ formatNote <- function(notes, default.octave = 4) {
 #'
 #' @param notes String, vector: Notes in form \code{c("C4", "Eb4", "Gb4")}
 #' 
-#' @return Vector of length \code{length(notes)} with semitone distances between successive notes
+#' @return Vector of length \code{length(notes)} with semitone distances 
+#' between successive notes
 #' @examples
 #' noteDistance(strings("C4 Eb4 Gb4 Bb4"))
 #' @author E.D. Gennatas
@@ -76,9 +78,11 @@ noteDistance <- function(notes) {
 #'
 #' Makes it easy to copy-paste notes into other functions
 #' e.g. \code{playChord(strings("C4 Eb4 G4 D5"))}
-#' @param x String: A single character object which consists of multiple notes separated by \code{sep}
+#' @param x String: A single character object which consists of multiple notes 
+#' separated by \code{sep}
 #' e.g. \code{"C4 Eb4 G4 D5"}
-#' @param sep String: the character that separates notes in \code{x}. Default = " "
+#' @param sep String: the character that separates notes in \code{x}. 
+#' Default = " "
 #' @examples
 #' strings("C4 Eb4 Gb4 Bb4")
 #' @author E.D. Gennatas
@@ -93,9 +97,10 @@ strings <- function(x, sep = " ") {
 
 #' Format Notation
 #'
-#' Converts the internal note representation which uses only flats, to the notation
-#' commonly used to write scales and chords, where a mix of sharps and flats is used to avoid
-#' repeating the same letter note. (e.g. \code{"G#5" "A5"}, instead of \code{"Ab5" "A5"})
+#' Converts the internal note representation which uses flats, to the 
+#' notation commonly used to write scales and chords, where a mix of sharps and 
+#' flats is used to avoid repeating the same letter note. 
+#' (e.g. \code{"G#5" "A5"}, instead of \code{"Ab5" "A5"})
 #' e.g. convert the C4 Lydian from:
 #' "C4"  "D4"  "E4"  "Gb4" "G4"  "A4"  "B4"  "C5"
 #' to:
@@ -136,7 +141,8 @@ formatNotation <- function(notes) {
         .change <- index[is.b]
         note.tochange <- notes[.change]
         octave <- substring(note.tochange, nchar(note.tochange))
-        new.note.letter <- note.letters[which(note.letters == .notes[.change]) - 1]
+        new.note.letter <-
+          note.letters[which(note.letters == .notes[.change]) - 1]
         if (length(new.note.letter) == 0) new.note.letter <- "G"
         new.note <- paste0(new.note.letter, "#", octave)
         notes[.change] <- new.note
