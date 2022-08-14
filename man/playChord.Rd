@@ -21,7 +21,8 @@ playChord(
 \item{chord}{String, vector: Notes making up chord. e.g. c("A4", "C5", "E5").
 e.g. output of \link{buildChord}}
 
-\item{type}{String: "harmonic", "ascending", "descending". Default = "harmonic"}
+\item{type}{String: "harmonic", "ascending", "descending". 
+Default = "harmonic"}
 
 \item{oscillator}{String: "sine", "square", "saw". Default = "sine"}
 
@@ -31,12 +32,12 @@ e.g. output of \link{buildChord}}
 
 \item{attack.time}{Integer: Attack time. Default = 50 (Helps prevent popping)}
 
-\item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-Default = 50 (Also helps prevent popping)}
+\item{inner.release.time}{Integer: Release time, that ends on note OFF 
+(instead of beginning at note OFF). Default = 50 (Also helps prevent popping)}
 
 \item{A4}{Float: Frequency for A4 in Hz. Default = 440}
 
-\item{plot}{Logical: If TRUE, plot chord using \link{cplot.piano}}
+\item{plot}{Logical: If TRUE, plot chord using \link{cplot_piano}}
 
 \item{...}{Additional arguments to pass to \link{note2freq}}
 }

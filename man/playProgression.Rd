@@ -18,8 +18,8 @@ playProgression(
 )
 }
 \arguments{
-\item{progression}{List of string vectors: Each element of the list is a chord.
-e.g. output of \link{buildProgression}}
+\item{progression}{List of string vectors: Each element of the list is a 
+chord. e.g. output of \link{buildProgression}}
 
 \item{oscillator}{String: "sine", "square", "saw". Default = "sine"}
 
@@ -31,12 +31,13 @@ e.g. output of \link{buildProgression}}
 
 \item{attack.time}{Integer: Attack time. Default = 50 (Helps prevent popping)}
 
-\item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-Default = 50 (Also helps prevent popping)}
+\item{inner.release.time}{Integer: Release time, that ends on note OFF 
+(instead of beginning at note OFF). Default = 50 (Also helps prevent popping)}
 
 \item{A4}{Float: Frequency for A4 in Hz. Default = 440}
 
-\item{plot}{Logical. If TRUE, plot each chord in the progression using \link{cplot.piano}}
+\item{plot}{Logical. If TRUE, plot each chord in the progression using 
+\link{cplot_piano}}
 
 \item{...}{Additional arguments to pass to \link{note2freq}}
 }

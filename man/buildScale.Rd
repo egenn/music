@@ -27,7 +27,7 @@ Default = FALSE}
 
 \item{pairs}{Logical: If TRUE and \code{play = TRUE}, play the root note along with each other note, in sequence}
 
-\item{plot}{Logical: If TRUE, plot scale notes using \link{cplot.piano}}
+\item{plot}{Logical: If TRUE, plot scale notes using \link{cplot_piano}}
 
 \item{formatNotation}{Logical: If TRUE, format notes to include both flats and sharps
 to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")}

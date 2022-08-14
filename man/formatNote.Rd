@@ -7,17 +7,18 @@
 formatNote(notes, default.octave = 4)
 }
 \arguments{
-\item{notes}{Vector, String: Input notes in the form \code{c("C4", "D4", "Eb4")}}
+\item{notes}{Vector, String: Input notes in the form 
+\code{c("C4", "D4", "Eb4")}}
 
-\item{default.octave}{Integer: Octave to use if missing in \code{notes}. Default = 4; i.e. \code{"C"}
-becomes \code{"C4"}}
+\item{default.octave}{Integer: Octave to use if missing in \code{notes}. 
+Default = 4; i.e. \code{"C"} becomes \code{"C4"}}
 }
 \description{
 Format notes for use in other \pkg{music} functions
 }
 \details{
-Converts sharps to flats, adds octave number if missing (Default = 4), and converts (rare) "bb" notes
-to regular notes
+Converts sharps to flats, adds octave number if missing (Default = 4), 
+and converts (rare) "bb" notes to regular notes
 }
 \examples{
 formatNote(c("D#4", "Ebb"))

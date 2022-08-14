@@ -10,9 +10,10 @@ formatNotation(notes)
 \item{notes}{String, vector: Notes to format}
 }
 \description{
-Converts the internal note representation which uses only flats, to the notation
-commonly used to write scales and chords, where a mix of sharps and flats is used to avoid
-repeating the same letter note. (e.g. \code{"G#5" "A5"}, instead of \code{"Ab5" "A5"})
+Converts the internal note representation which uses flats, to the 
+notation commonly used to write scales and chords, where a mix of sharps and 
+flats is used to avoid repeating the same letter note. 
+(e.g. \code{"G#5" "A5"}, instead of \code{"Ab5" "A5"})
 e.g. convert the C4 Lydian from:
 "C4"  "D4"  "E4"  "Gb4" "G4"  "A4"  "B4"  "C5"
 to:

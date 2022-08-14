@@ -20,12 +20,15 @@ buildProgression(
 
 \item{play}{Logical: If TRUE, play scale using \link{playProgression}}
 
-\item{plot}{Logical: If TRUE, plot each chord in the progression using \link{cplot.piano}}
+\item{plot}{Logical: If TRUE, plot each chord in the progression using 
+\link{cplot_piano}}
 
-\item{formatNotation}{Logical: If TRUE, format notes to include both flats and sharps
-to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")}
+\item{formatNotation}{Logical: If TRUE, format notes to include both flats a
+nd sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to 
+c("F#4", "G4")}
 
-\item{...}{Additional arguments to be passed to \link{playProgression} if \code{ play = TRUE}}
+\item{...}{Additional arguments to be passed to \link{playProgression} if 
+\code{ play = TRUE}}
 }
 \description{
 Build Chord Progression

@@ -16,18 +16,22 @@ note2freq(
 \arguments{
 \item{note}{String: Note(s) to convert to frequencies}
 
-\item{tuning}{String: "12ET": 12-note equal temperament, "custom": Intonation defined by \code{customRatios}}
+\item{tuning}{String: "12ET": 12-note equal temperament, "custom": 
+Intonation defined by \code{customRatios}}
 
-\item{custom.ratios}{Numeric, vector, length 13: Custom ratios for a 12-note scale, starting with 1 (root)
-and ending in 2 (octave) to use when \code{tuning = "custom"}. The A4 note will be set to \code{A4} Hz and the
-rest of the frequencies will be built based on these ratios and the \code{customRoot}}
+\item{custom.ratios}{Numeric, vector, length 13: Custom ratios for a 12-note 
+scale, starting with 1 (root) and ending in 2 (octave) to use when 
+\code{tuning = "custom"}. The A4 note will be set to \code{A4} Hz and the
+rest of the frequencies will be built based on these ratios and the 
+\code{customRoot}}
 
 \item{A4}{Float: Frequency for A4 in Hz. Default = 440}
 
-\item{custom.root}{String: Root note for just intonation (\code{tuning = "custom"}). Default = "C"}
+\item{custom.root}{String: Root note for just intonation 
+(\code{tuning = "custom"}). Default = "C"}
 
-\item{default.octave}{Integer: If \code{note} is provided without octave number (e.g. "C"), default to this
-octave. Default = 4}
+\item{default.octave}{Integer: If \code{note} is provided without octave 
+number (e.g. "C"), default to this octave. Default = 4}
 }
 \description{
 Convert notes to frequencies

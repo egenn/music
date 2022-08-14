@@ -28,8 +28,8 @@ freq2wave(
 
 \item{attack.time}{Integer: Attack time. Default = 50 (Helps prevent popping)}
 
-\item{inner.release.time}{Integer: Release time, that ends on note OFF (instead of beginning at note OFF).
-Default = 50 (Also helps prevent popping)}
+\item{inner.release.time}{Integer: Release time, that ends on note OFF 
+(instead of beginning at note OFF). Default = 50 (Also helps prevent popping)}
 
 \item{plot}{Logical: If TRUE, plot wave(s) using \link{mplot}}
 }

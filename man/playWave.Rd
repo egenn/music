@@ -7,8 +7,8 @@
 playWave(wave, sample.rate = 44100, plot = FALSE)
 }
 \arguments{
-\item{wave}{Matrix or vector of waveforms. If a matrix, each column should be a waveform to be played
-simultaneously}
+\item{wave}{Matrix or vector of waveforms. If a matrix, each column should 
+be a waveform to be played simultaneously}
 
 \item{sample.rate}{Integer: Sample rate. Default = 44100}
 

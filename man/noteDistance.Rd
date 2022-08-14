@@ -10,7 +10,8 @@ noteDistance(notes)
 \item{notes}{String, vector: Notes in form \code{c("C4", "Eb4", "Gb4")}}
 }
 \value{
-Vector of length \code{length(notes)} with semitone distances between successive notes
+Vector of length \code{length(notes)} with semitone distances 
+between successive notes
 }
 \description{
 Calculates note distance in semitones
