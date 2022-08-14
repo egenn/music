@@ -6,3 +6,5 @@
 ^appveyor\.yml$
 cran-comments.md
 ^CRAN-SUBMISSION$
+R/dev/
+.DS_Store
