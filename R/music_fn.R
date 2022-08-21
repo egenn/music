@@ -21,7 +21,7 @@
 
 formatNote <- function(notes, default.octave = 4) {
 
-  # Sharps to flats ====
+  # Sharps to flats ----
   index <- grep("#", notes)
   notes[index] <- gsub("A", "B", notes[index])
   notes[index] <- gsub("G", "A", notes[index])
@@ -36,7 +36,7 @@ formatNote <- function(notes, default.octave = 4) {
   index <- setdiff(index, neg.index)
   notes[index] <- paste0(notes[index], default.octave)
 
-  # bb to regular notes ====
+  # bb to regular notes ----
   index <- grep("bb", notes)
   for (i in index) {
     .noteup <- gsub("bb", "", notes[i])
