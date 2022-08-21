@@ -8,9 +8,9 @@ buildScale(
   root,
   scale = "minor",
   descending = FALSE,
+  plot = TRUE,
   play = FALSE,
   pairs = FALSE,
-  plot = FALSE,
   formatNotation = TRUE,
   ...
 )
@@ -20,19 +20,22 @@ buildScale(
 
 \item{scale}{String: Scale to build. Default = "minor"}
 
-\item{descending}{Logical: If TRUE, return notes in descending order, otherwise in ascending
-Default = FALSE}
-
-\item{play}{Logical: If TRUE, play scale using \link{playNote}}
-
-\item{pairs}{Logical: If TRUE and \code{play = TRUE}, play the root note along with each other note, in sequence}
+\item{descending}{Logical: If TRUE, return notes in descending order, 
+otherwise in ascending}
 
 \item{plot}{Logical: If TRUE, plot scale notes using \link{cplot_piano}}
 
-\item{formatNotation}{Logical: If TRUE, format notes to include both flats and sharps
-to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to c("F#4", "G4")}
+\item{play}{Logical: If TRUE, play scale using \link{playNote}}
 
-\item{...}{Additional arguments to be passed to \link{playNote} if \code{play = TRUE}}
+\item{pairs}{Logical: If TRUE and \code{play = TRUE}, play the root note 
+along with each other note, in sequence}
+
+\item{formatNotation}{Logical: If TRUE, format notes to include both flats 
+and sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") 
+to c("F#4", "G4")}
+
+\item{...}{Additional arguments to be passed to \link{playNote} if 
+\code{play = TRUE}}
 }
 \description{
 Build Scale / Mode

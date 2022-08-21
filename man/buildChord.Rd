@@ -7,8 +7,8 @@
 buildChord(
   root,
   chord = "minor",
+  plot = TRUE,
   play = FALSE,
-  plot = FALSE,
   formatNotation = TRUE,
   ...
 )
@@ -18,9 +18,9 @@ buildChord(
 
 \item{chord}{String: Chord to build. Default = "minor"}
 
-\item{play}{Logical: If TRUE, play chord using \link{playChord}}
-
 \item{plot}{Logical: If TRUE, plot chord notes using \link{cplot_piano}}
+
+\item{play}{Logical: If TRUE, play chord using \link{playChord}}
 
 \item{formatNotation}{Logical: If TRUE, format notes to include both flats 
 and sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to 

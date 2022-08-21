@@ -7,8 +7,8 @@
 buildProgression(
   root = "A4",
   scale = "minor",
-  play = FALSE,
   plot = FALSE,
+  play = FALSE,
   formatNotation = TRUE,
   ...
 )
@@ -18,10 +18,10 @@ buildProgression(
 
 \item{scale}{String: "major" or "minor". Default = "minor"}
 
-\item{play}{Logical: If TRUE, play scale using \link{playProgression}}
-
-\item{plot}{Logical: If TRUE, plot each chord in the progression using 
+\item{plot}{Logical: If TRUE, plot each chord in the progression using
 \link{cplot_piano}}
+
+\item{play}{Logical: If TRUE, play scale using \link{playProgression}}
 
 \item{formatNotation}{Logical: If TRUE, format notes to include both flats a
 nd sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to 
