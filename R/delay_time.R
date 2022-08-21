@@ -55,8 +55,8 @@ delay_time <- function(bpm = 120,
                    "1/32" = .t / 8,
                    "1/32T" = .t / 8 * 2 / 3)
   if (verbose) {
-    cat(" BPM:", blue$bold(bpm), "Note:", blue$bold(note), "\n")
-    cat(" Delay time: ", blue$bold(round(delayt, 2)), blue("ms\n"), sep = "")
+    cat("  BPM:", blue$bold(bpm), "Note:", blue$bold(note), "\n")
+    cat("  Delay time: ", blue$bold(round(delayt, 2)), blue("ms\n"), sep = "")
   }
   invisible(delayt)
   
