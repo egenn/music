@@ -20,6 +20,11 @@ delay_time(
 "2" means a double note, "1" a whole, and so on. "T" denotes a triple note, 
 "D" denotes a dotted note.
 Case insensitive. Default = "1/4" (quarter note)}
+
+\item{verbose}{Logical: If TRUE print message to console}
+}
+\value{
+Delay time, invisibly
 }
 \description{
 Calculates delay and reverb time in milliseconds given tempo in beats per 

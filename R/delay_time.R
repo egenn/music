@@ -16,6 +16,9 @@
 #' "2" means a double note, "1" a whole, and so on. "T" denotes a triple note, 
 #' "D" denotes a dotted note.
 #' Case insensitive. Default = "1/4" (quarter note)
+#' @param verbose Logical: If TRUE print message to console
+#' 
+#' @return Delay time, invisibly
 #' 
 #' @author E.D. Gennatas
 #' @export
