@@ -22,7 +22,8 @@ _Waveform time series plots:_
 
 ## Installation
 
-You can either install from [CRAN](https://cran.r-project.org/package=music) or grab the latest version directly from this repository.
+You can either install from [CRAN](https://cran.r-project.org/package=music) or 
+grab the latest version directly from this repository.
 
 ### Install from CRAN:
 
