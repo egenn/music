@@ -64,4 +64,3 @@ delay_time <- function(bpm = 120,
   invisible(delayt)
   
 } # music::delay_time
-
