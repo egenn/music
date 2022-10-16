@@ -8,3 +8,4 @@ cran-comments.md
 CRAN-SUBMISSION
 R/dev/
 .DS_Store
+*.code-workspace
