@@ -22,7 +22,7 @@ NULL
   music.ver <- read.dcf(file = system.file("DESCRIPTION", package = pkgname),
                          fields = "Version")
   packageStartupMessage(paste0("  .:", pkgname, " v", music.ver,
-                               ": Welcome, ", Sys.getenv("USER"),
+                               " \U1F3A7 Welcome, ", Sys.getenv("USER"),
                                "\n  [", sessionInfo()[2], "]"))
 
 }
