@@ -223,7 +223,7 @@ buildProgression <- function(root = "A4",
                              formatNotation = TRUE, ...) {
 
   root <- formatNote(root)
-  .scale <- buildScale(root = root, scale = scale)
+  .scale <- buildScale(root = root, scale = scale, plot = FALSE)
   .progression <- chordProgression[[scale]]
   .progression <- c(.progression, .progression[1])
   .chords <- lapply(
@@ -232,19 +232,20 @@ buildProgression <- function(root = "A4",
           buildChord(
               root = .scale[i],
               chord = .progression[i],
-              formatNotation = formatNotation
+              formatNotation = formatNotation,
+              plot = plot
           )
       }
   )
   names(.chords) <- paste0(.scale, .progression)
 
   if (play) playProgression(.chords)
-  if (plot) {
-      for (i in seq(.chords)) {
-          cplot_piano(.chords[[i]])
-          cat("\n")
-      }
-  }
+#   if (plot) {
+#       for (i in seq(.chords)) {
+#           cplot_piano(.chords[[i]])
+#           cat("\n")
+#       }
+#   }
   .chords
 
 } # music::buildProgression

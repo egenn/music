@@ -21,16 +21,19 @@
 
 formatNote <- function(notes, default.octave = 4) {
 
+  if (all(nchar(notes) == 1)) notes <- toupper(notes)
+
   # Sharps to flats ----
   index <- grep("#", notes)
-  notes[index] <- gsub("A", "B", notes[index])
-  notes[index] <- gsub("G", "A", notes[index])
-  notes[index] <- gsub("F", "G", notes[index])
-  notes[index] <- gsub("D", "E", notes[index])
-  notes[index] <- gsub("C", "D", notes[index])
-  notes[index] <- gsub("#", "b", notes[index])
+  if (length(index) > 0) {
+    notes[index] <- gsub("A#", "Bb", notes[index])
+    notes[index] <- gsub("G#", "Ab", notes[index])
+    notes[index] <- gsub("F#", "Gb", notes[index])
+    notes[index] <- gsub("D#", "Eb", notes[index])
+    notes[index] <- gsub("C#", "Db", notes[index])
+  }
 
-  # Add octave if missing
+  # Add octave if missing ----
   index <- seq(notes)
   neg.index <- grep(paste(1:10, collapse = "|"), notes)
   index <- setdiff(index, neg.index)
