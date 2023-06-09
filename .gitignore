@@ -9,3 +9,4 @@ CRAN-SUBMISSION
 R/dev/
 .DS_Store
 *.code-workspace
+*.pdf
