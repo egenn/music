@@ -12,19 +12,24 @@
 #' on twelve-tone equal temperament tuning (12ET). Custom tuning can be defined
 #' by specifying frequency ratios and a root  note. See \link{note2freq}.
 #' A4 defaults to 440Hz, and can be changed with the 'A4' argument.
-#' @docType package
+#'
 #' @name music-package
 #' @import graphics utils crayon
+"_PACKAGE"
 
 NULL
 
 .onAttach <- function(libname, pkgname) {
-    music.ver <- read.dcf(
-        file = system.file("DESCRIPTION", package = pkgname),
-        fields = "Version"
-    )
-    packageStartupMessage(paste0(
-        "  .:", pkgname, " v", music.ver,
-        " \U1F3A7 Welcome, ", Sys.getenv("USER")
-    ))
+  music.ver <- read.dcf(
+    file = system.file("DESCRIPTION", package = pkgname),
+    fields = "Version"
+  )
+  packageStartupMessage(paste0(
+    "  .:",
+    pkgname,
+    " v",
+    music.ver,
+    " \U1F3A7 Welcome, ",
+    Sys.getenv("USER")
+  ))
 }
