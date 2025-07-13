@@ -57,7 +57,7 @@ scaleSteps <- list(
 #' buildScale("C4", "minor")
 #' buildScale("B4", "minor", descending = TRUE, plot = TRUE)
 #' \dontrun{
-#' buildScale("B4", "minor", descending = TRUE, play = TRUE, plot TRUE)
+#' buildScale("B4", "minor", descending = TRUE, play = TRUE, plot = TRUE)
 #' }
 
 buildScale <- function(
@@ -73,7 +73,7 @@ buildScale <- function(
   if (missing(root)) {
     cat(crayon::silver$bold("Available scales:\n"))
     cat(crayon::cyan$bold(paste(names(scaleSteps), collapse = ", ")), "\n")
-    return(invisible(9))
+    return(invisible(64))
   } else {
     root <- formatNote(root)
   }
@@ -98,7 +98,11 @@ buildScale <- function(
     }
   }
 
-  .notes1 <- if (formatNotation) formatNotation(.notes) else .notes
+  .notes1 <- if (formatNotation) {
+    formatNotation(.notes)
+  } else {
+    .notes
+  }
   if (plot) {
     cat(blue$bold(" ", root, scale, "scale\n"))
     cplot_piano(.notes1)
@@ -181,7 +185,7 @@ buildChord <- function(
   if (missing(root)) {
     cat(crayon::silver$bold("Available chords:\n"))
     cat(crayon::cyan$bold(paste(names(chordSteps), collapse = ", ")), "\n")
-    return(invisible(9))
+    return(invisible(64))
   } else {
     root <- formatNote(root)
   }
