@@ -1,6 +1,6 @@
 # play.R
 # ::music::
-# 2019- E.D. Gennatas lambdamd.org
+# 2019-present E.D. Gennatas lambdamd.org
 
 #' Minimal "Polyphonic" Wave Player
 #'
@@ -31,7 +31,7 @@ playWave <- function(wave, sample.rate = 44100, plot = FALSE) {
 
   # Combine waves
   if (n.notes > 1) {
-    wave <- rowSums(wave)
+    wave <- rowMeans(wave)
   }
 
   audio::play(wave, rate = sample.rate)
