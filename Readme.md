@@ -1,6 +1,5 @@
 # **music** R package  
-
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) [![Build Status](https://travis-ci.com/egenn/music.svg?branch=master)](https://travis-ci.com/egenn/music)  [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/egenn/music?branch=master&svg=true)](https://ci.appveyor.com/project/egenn/music) [![codecov](https://codecov.io/gh/egenn/music/branch/master/graph/badge.svg)](https://codecov.io/gh/egenn/music)
+[![R-CMD-check](https://github.com/egenn/music/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/egenn/music/actions/workflows/R-CMD-check.yaml) [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/egenn/music?branch=master&svg=true)](https://ci.appveyor.com/project/egenn/music) [![codecov](https://codecov.io/gh/egenn/music/branch/master/graph/badge.svg)](https://codecov.io/gh/egenn/music) [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN](https://www.r-pkg.org/badges/version/music)](https://cran.r-project.org/package=music) 
 ![](http://cranlogs.r-pkg.org/badges/grand-total/music)
 
