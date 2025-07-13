@@ -1,6 +1,6 @@
 # play.R
 # ::music::
-# 2019 E.D. Gennatas lambdamd.org
+# 2019- E.D. Gennatas lambdamd.org
 
 #' Minimal "Polyphonic" Wave Player
 #'
@@ -10,12 +10,13 @@
 #' be a waveform to be played simultaneously
 #' @param sample.rate Integer: Sample rate. Default = 44100
 #' @param plot Logical: If TRUE: plot wave using \link{mplot}.
+
+#' @author E.D. Gennatas
+#' @export
 #' @examples
 #' \dontrun{
 #' playWave(freq2wave(440))
 #' }
-#' @export
-#' @author E.D. Gennatas
 
 playWave <- function(wave, sample.rate = 44100, plot = FALSE) {
   if (is.null(dim(wave))) {
@@ -49,12 +50,12 @@ playWave <- function(wave, sample.rate = 44100, plot = FALSE) {
 #' (instead of beginning at note OFF). Default = 50 (Also helps prevent popping)
 #' @param plot Logical: If TRUE, plot waveform
 #'
+#' @author E.D. Gennatas
+#' @export
 #' @examples
 #' \dontrun{
 #' playFreq(440)
 #' }
-#' @export
-#' @author E.D. Gennatas
 
 playFreq <- function(
   frequency,
@@ -92,12 +93,13 @@ playFreq <- function(
 #' supports only two octaves; do not try plotting if your notes span more than
 #' two octaves.
 #' @param ... Additional arguments to pass to \link{note2freq}
+#'
+#' @author E.D. Gennatas
+#' @export
 #' @examples
 #' \dontrun{
 #' playNote("B4")
 #' }
-#' @export
-#' @author E.D. Gennatas
 
 playNote <- function(
   note,
@@ -137,13 +139,15 @@ playNote <- function(
 #' @param type String: "harmonic", "ascending", "descending".
 #' Default = "harmonic"
 #' @param plot Logical: If TRUE, plot chord using \link{cplot_piano}
-#' @export
+#'
 #' @return The constructed waveform (invisibly)
+#'
+#' @author E.D. Gennatas
+#' @export
 #' @examples
 #' \dontrun{
 #' playChord(buildChord("E4", "minor"))
 #' }
-#' @author E.D. Gennatas
 
 playChord <- function(
   chord,
@@ -192,12 +196,13 @@ playChord <- function(
 #' chord. e.g. output of \link{buildProgression}
 #' @param plot Logical. If TRUE, plot each chord in the progression using
 #' \link{cplot_piano}
+#'
+#' @author E.D. Gennatas
 #' @export
 #' @examples
 #' \dontrun{
 #' playProgression(buildProgression("G4", "minor"))
 #' }
-#' @author E.D. Gennatas
 
 playProgression <- function(
   progression,

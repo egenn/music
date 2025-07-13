@@ -9,4 +9,4 @@ Imports: graphics, utils, audio, crayon
 License: GPL (>=3)
 URL: https://github.com/egenn/music
 Encoding: UTF-8
-RoxygenNote: 7.2.1
+RoxygenNote: 7.3.2
