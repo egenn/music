@@ -1,4 +1,4 @@
-/R/dev/
+__dev/
 *.Rproj
 .Rproj.user
 .Rhistory
@@ -6,7 +6,6 @@
 .Ruserdata
 cran-comments.md
 CRAN-SUBMISSION
-R/dev/
 .DS_Store
 *.code-workspace
 *.pdf

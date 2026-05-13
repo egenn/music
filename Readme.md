@@ -41,8 +41,12 @@ remotes::install_github("egenn/music")
 
 ## Documentation
 
-[Official R manual](https://egenn.github.io/docs/music.pdf)
-
 [music Vignette](https://egenn.github.io/music/music-vignette)
 
 <img align = "center" src="http://egenn.github.io/imgs/music_hex_logo.png" width="250">
+
+## version 0.2.0 function renaming
+
+In version 0.2.0, all functions are now using snake_case. Deprecated functions
+will produce a warning. Please make sure to use the new function names in your
+code. The deprecated functions will be removed in a future release.
