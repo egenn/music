@@ -14,11 +14,34 @@
 \alias{playProgression}
 \title{Deprecated functions}
 \usage{
-buildScale(...)
+buildScale(
+  root,
+  scale = "minor",
+  descending = FALSE,
+  plot = TRUE,
+  play = FALSE,
+  pairs = FALSE,
+  formatNotation = TRUE,
+  ...
+)
 
-buildChord(...)
+buildChord(
+  root,
+  chord = "minor",
+  plot = TRUE,
+  play = FALSE,
+  formatNotation = TRUE,
+  ...
+)
 
-buildProgression(...)
+buildProgression(
+  root = "A4",
+  scale = "minor",
+  plot = FALSE,
+  play = FALSE,
+  formatNotation = TRUE,
+  ...
+)
 
 formatNote(...)
 
@@ -37,7 +60,28 @@ playChord(...)
 playProgression(...)
 }
 \arguments{
-\item{...}{Arguments to be passed to the new function}
+\item{root}{String: Root note.  e.g. "C4"}
+
+\item{scale}{String: Scale to build. Default = "minor"}
+
+\item{descending}{Logical: If TRUE, return notes in descending order,
+otherwise in ascending}
+
+\item{plot}{Logical: If TRUE, plot scale notes using \link{cplot_piano}}
+
+\item{play}{Logical: If TRUE, play scale using \link{play_note}}
+
+\item{pairs}{Logical: If TRUE and \code{play = TRUE}, play the root note
+along with each other note, in sequence}
+
+\item{formatNotation}{Logical: If TRUE, format notes to include both flats a
+nd sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to
+c("F#4", "G4")}
+
+\item{...}{Additional arguments to be passed to \link{play_note} if
+\code{play = TRUE}}
+
+\item{chord}{String: Chord to build. Default = "minor"}
 }
 \description{
 Deprecated functions

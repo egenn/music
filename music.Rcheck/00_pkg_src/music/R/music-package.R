@@ -20,26 +20,82 @@ NULL
 # %% Deprecated functions ----
 #' Deprecated functions
 #'
-#' @param ... Arguments to be passed to the new function
+#' @inheritParams build_scale
+#' @param formatNotation Logical: If TRUE, format notes to include both flats
+#' and sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4")
 #' @rdname myPackage-deprecated
 #' @export
-buildScale <- function(...) {
+buildScale <- function(
+  root,
+  scale = "minor",
+  descending = FALSE,
+  plot = TRUE,
+  play = FALSE,
+  pairs = FALSE,
+  formatNotation = TRUE,
+  ...
+) {
   .Deprecated("build_scale")
-  build_scale(...)
+  build_scale(
+    root = root,
+    scale = scale,
+    descending = descending,
+    plot = plot,
+    play = play,
+    pairs = pairs,
+    format_notation = formatNotation,
+    ...
+  )
 }
 
+#' @inheritParams build_chord
+#' @param formatNotation Logical: If TRUE, format notes to include both flats
+#' and sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to
+#' c("F#4", "G4")
 #' @rdname myPackage-deprecated
 #' @export
-buildChord <- function(...) {
+buildChord <- function(
+  root,
+  chord = "minor",
+  plot = TRUE,
+  play = FALSE,
+  formatNotation = TRUE,
+  ...
+) {
   .Deprecated("build_chord")
-  build_chord(...)
+  build_chord(
+    root = root,
+    chord = chord,
+    plot = plot,
+    play = play,
+    format_notation = formatNotation,
+    ...
+  )
 }
 
+#' @inheritParams build_progression
+#' @param formatNotation Logical: If TRUE, format notes to include both flats a
+#' nd sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to
+#' c("F#4", "G4")
 #' @rdname myPackage-deprecated
 #' @export
-buildProgression <- function(...) {
+buildProgression <- function(
+  root = "A4",
+  scale = "minor",
+  plot = FALSE,
+  play = FALSE,
+  formatNotation = TRUE,
+  ...
+) {
   .Deprecated("build_progression")
-  build_progression(...)
+  build_progression(
+    root = root,
+    scale = scale,
+    plot = plot,
+    play = play,
+    format_notation = formatNotation,
+    ...
+  )
 }
 
 #' @rdname myPackage-deprecated
