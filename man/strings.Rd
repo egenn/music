@@ -7,11 +7,11 @@
 strings(x, sep = " ")
 }
 \arguments{
-\item{x}{String: A single character object which consists of multiple notes 
+\item{x}{String: A single character object which consists of multiple notes
 separated by \code{sep}
 e.g. \code{"C4 Eb4 G4 D5"}}
 
-\item{sep}{String: the character that separates notes in \code{x}. 
+\item{sep}{String: the character that separates notes in \code{x}.
 Default = " "}
 }
 \description{
@@ -19,11 +19,11 @@ Convenience function to separate notes into vector of strings
 }
 \details{
 Makes it easy to copy-paste notes into other functions
-e.g. \code{playChord(strings("C4 Eb4 G4 D5"))}
+e.g. \code{play_chord(strings("C4 Eb4 G4 D5"))}
 }
 \examples{
 strings("C4 Eb4 Gb4 Bb4")
 }
 \author{
-E.D. Gennatas
+EDG
 }

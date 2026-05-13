@@ -1,6 +1,6 @@
 # play.R
 # ::music::
-# 2019-present E.D. Gennatas lambdamd.org
+# 2019- EDG rtemis.org
 
 #' Minimal "Polyphonic" Wave Player
 #'
@@ -11,14 +11,14 @@
 #' @param sample.rate Integer: Sample rate. Default = 44100
 #' @param plot Logical: If TRUE: plot wave using \link{mplot}.
 
-#' @author E.D. Gennatas
+#' @author EDG
 #' @export
 #' @examples
 #' \dontrun{
-#' playWave(freq2wave(440))
+#' play_wave(freq2wave(440))
 #' }
 
-playWave <- function(wave, sample.rate = 44100, plot = FALSE) {
+play_wave <- function(wave, sample.rate = 44100, plot = FALSE) {
   if (is.null(dim(wave))) {
     wave <- matrix(wave, ncol = 1)
   }
@@ -35,7 +35,7 @@ playWave <- function(wave, sample.rate = 44100, plot = FALSE) {
   }
 
   audio::play(wave, rate = sample.rate)
-} # music::playWave
+} # music::play_wave
 
 
 #' Play frequency
@@ -50,14 +50,14 @@ playWave <- function(wave, sample.rate = 44100, plot = FALSE) {
 #' (instead of beginning at note OFF). Default = 50 (Also helps prevent popping)
 #' @param plot Logical: If TRUE, plot waveform
 #'
-#' @author E.D. Gennatas
+#' @author EDG
 #' @export
 #' @examples
 #' \dontrun{
-#' playFreq(440)
+#' play_freq(440)
 #' }
 
-playFreq <- function(
+play_freq <- function(
   frequency,
   oscillator = "sine",
   duration = rep(1, length(frequency)),
@@ -81,12 +81,12 @@ playFreq <- function(
   if (plot) {
     mplot(wave)
   }
-  playWave(wave)
-} # music::playFreq
+  play_wave(wave)
+} # music::play_freq
 
 #' Play Note
 #'
-#' @inheritParams playFreq
+#' @inheritParams play_freq
 #' @inheritParams note2freq
 #' @param note String, Vector: Note(s) to be played, e.g. c("Ab4", "B4")
 #' @param plot Logical: If TRUE, plot notes using \link{cplot_piano}. This
@@ -94,14 +94,14 @@ playFreq <- function(
 #' two octaves.
 #' @param ... Additional arguments to pass to \link{note2freq}
 #'
-#' @author E.D. Gennatas
+#' @author EDG
 #' @export
 #' @examples
 #' \dontrun{
-#' playNote("B4")
+#' play_note("B4")
 #' }
 
-playNote <- function(
+play_note <- function(
   note,
   oscillator = "sine",
   duration = rep(1, length(note)),
@@ -119,7 +119,7 @@ playNote <- function(
     cplot_piano(note)
   }
 
-  playFreq(
+  play_freq(
     freqs,
     oscillator = oscillator,
     duration = duration,
@@ -128,28 +128,28 @@ playNote <- function(
     attack.time = attack.time,
     inner.release.time = inner.release.time
   )
-} # music::playNote
+} # music::play_note
 
 
 #' Play Chord
 #'
-#' @inheritParams playNote
+#' @inheritParams play_note
 #' @param chord String, vector: Notes making up chord. e.g. c("A4", "C5", "E5").
-#' e.g. output of \link{buildChord}
+#' e.g. output of \link{build_chord}
 #' @param type String: "harmonic", "ascending", "descending".
 #' Default = "harmonic"
 #' @param plot Logical: If TRUE, plot chord using \link{cplot_piano}
 #'
 #' @return The constructed waveform (invisibly)
 #'
-#' @author E.D. Gennatas
+#' @author EDG
 #' @export
 #' @examples
 #' \dontrun{
-#' playChord(buildChord("E4", "minor"))
+#' play_chord(build_chord("E4", "minor"))
 #' }
 
-playChord <- function(
+play_chord <- function(
   chord,
   type = c("harmonic", "ascending", "descending"),
   oscillator = "sine",
@@ -184,27 +184,27 @@ playChord <- function(
   if (plot) {
     cplot_piano(chord)
   }
-  playWave(wave)
+  play_wave(wave)
   invisible(wave)
-} # music::playChord
+} # music::play_chord
 
 
 #' Play Progression
 #'
-#' @inheritParams playNote
+#' @inheritParams play_note
 #' @param progression List of string vectors: Each element of the list is a
-#' chord. e.g. output of \link{buildProgression}
+#' chord. e.g. output of \link{build_progression}
 #' @param plot Logical. If TRUE, plot each chord in the progression using
 #' \link{cplot_piano}
 #'
-#' @author E.D. Gennatas
+#' @author EDG
 #' @export
 #' @examples
 #' \dontrun{
-#' playProgression(buildProgression("G4", "minor"))
+#' play_progression(build_progression("G4", "minor"))
 #' }
 
-playProgression <- function(
+play_progression <- function(
   progression,
   oscillator = c("sine", "square", "saw", "triangle"),
   duration = 1,
@@ -234,11 +234,11 @@ playProgression <- function(
     )
   })
   wave <- do.call(rbind, wave)
-  playWave(wave)
+  play_wave(wave)
   if (plot) {
     for (i in seq(progression)) {
       cplot_piano(progression[[i]])
       cat("\n")
     }
   }
-} # playProgression
+} # play_progression

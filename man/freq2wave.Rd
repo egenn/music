@@ -37,8 +37,8 @@ freq2wave(
 Frequency to waveform
 }
 \examples{
-wave <- freq2wave(note2freq(buildChord("A4", "sus2")))
+wave <- freq2wave(note2freq(build_chord("A4", "sus2")))
 }
 \author{
-E.D. Gennatas
+EDG
 }

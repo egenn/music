@@ -35,12 +35,12 @@ mplot(
 
 \item{main}{String: Plot title}
 
-\item{legend}{Logical: If TRUE, show legends on plot, if \code{x} has column 
+\item{legend}{Logical: If TRUE, show legends on plot, if \code{x} has column
 names}
 
 \item{lwd}{Float: Line width. Default = 1}
 
-\item{pty}{String: "m" to fill available device space, "s" for square plot. 
+\item{pty}{String: "m" to fill available device space, "s" for square plot.
 Default = "m"}
 
 \item{bg}{Color: background color}
@@ -77,5 +77,5 @@ Default = "m"}
 Plot waveform
 }
 \author{
-E.D. Gennatas
+EDG
 }

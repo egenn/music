@@ -4,21 +4,21 @@
 \alias{cplot_piano}
 \title{Console piano plot for notes}
 \usage{
-cplot_piano(notes = buildScale("C4", "minor"), blackKey.col = "white")
+cplot_piano(notes = build_scale("C4", "minor"), blackKey.col = "white")
 }
 \arguments{
-\item{notes}{String, vector: Notes to highlight. 
-Default = \code{buildScale("C4", "minor")}}
+\item{notes}{String, vector: Notes to highlight.
+Default = \code{build_scale("C4", "minor")}}
 
-\item{blackKey.col}{Color to use for black keys. Default = "white" for use 
+\item{blackKey.col}{Color to use for black keys. Default = "white" for use
 on a dark terminal. Set to "black" for use on a light terminal.}
 }
 \description{
 Build an ASCII plot of notes on a piano
 }
 \examples{
-cplot_piano(buildScale("B4", "minor"))
+cplot_piano(build_scale("B4", "minor"))
 }
 \author{
-E.D. Gennatas
+EDG
 }

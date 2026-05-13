@@ -1,27 +1,27 @@
 # music_fn.R
 # ::music::
-# 2019 E.D. Gennatas lambdamd.org
+# 2019- EDG rtemis.org
 
 #' Format notes
 #'
 #' Format notes for use in other \pkg{music} functions
 #'
-#' Converts sharps to flats, adds octave number if missing (Default = 4), 
+#' Converts sharps to flats, adds octave number if missing (Default = 4),
 #' and converts (rare) "bb" notes to regular notes
 #'
-#' @param notes Vector, String: Input notes in the form 
+#' @param notes Vector, String: Input notes in the form
 #' \code{c("C4", "D4", "Eb4")}
-#' @param default.octave Integer: Octave to use if missing in \code{notes}. 
+#' @param default.octave Integer: Octave to use if missing in \code{notes}.
 #' Default = 4; i.e. \code{"C"} becomes \code{"C4"}
-#' 
+#'
 #' @examples
-#' formatNote(c("D#4", "Ebb"))
-#' @author E.D. Gennatas
+#' format_note(c("D#4", "Ebb"))
+#' @author EDG
 #' @export
-
-formatNote <- function(notes, default.octave = 4) {
-
-  if (all(nchar(notes) == 1)) notes <- toupper(notes)
+format_note <- function(notes, default.octave = 4) {
+  if (all(nchar(notes) == 1)) {
+    notes <- toupper(notes)
+  }
 
   # Sharps to flats ----
   index <- grep("#", notes)
@@ -47,8 +47,7 @@ formatNote <- function(notes, default.octave = 4) {
   }
 
   notes
-
-} # formatNote.R
+} # format_note.R
 
 
 #' Note distance in semitones
@@ -56,23 +55,21 @@ formatNote <- function(notes, default.octave = 4) {
 #' Calculates note distance in semitones
 #'
 #' @param notes String, vector: Notes in form \code{c("C4", "Eb4", "Gb4")}
-#' 
-#' @return Vector of length \code{length(notes)} with semitone distances 
+#'
+#' @return Vector of length \code{length(notes)} with semitone distances
 #' between successive notes
 #' @examples
-#' noteDistance(strings("C4 Eb4 Gb4 Bb4"))
-#' @author E.D. Gennatas
+#' note_distance(strings("C4 Eb4 Gb4 Bb4"))
+#' @author EDG
 #' @export
 
-noteDistance <- function(notes) {
-
-  notes <- formatNote(notes)
+note_distance <- function(notes) {
+  notes <- format_note(notes)
   .diff <- diff(pos[notes])
   .diff <- c(0, .diff)
   names(.diff)[1] <- notes[1]
   .diff
-
-} # music:noteDistance
+} # music:note_distance
 
 
 #' Separate notes into vector of strings
@@ -80,29 +77,27 @@ noteDistance <- function(notes) {
 #' Convenience function to separate notes into vector of strings
 #'
 #' Makes it easy to copy-paste notes into other functions
-#' e.g. \code{playChord(strings("C4 Eb4 G4 D5"))}
-#' @param x String: A single character object which consists of multiple notes 
+#' e.g. \code{play_chord(strings("C4 Eb4 G4 D5"))}
+#' @param x String: A single character object which consists of multiple notes
 #' separated by \code{sep}
 #' e.g. \code{"C4 Eb4 G4 D5"}
-#' @param sep String: the character that separates notes in \code{x}. 
+#' @param sep String: the character that separates notes in \code{x}.
 #' Default = " "
 #' @examples
 #' strings("C4 Eb4 Gb4 Bb4")
-#' @author E.D. Gennatas
+#' @author EDG
 #' @export
 
 strings <- function(x, sep = " ") {
-
   strsplit(x, split = sep)[[1]]
-
 } # music::strings
 
 
 #' Format Notation
 #'
-#' Converts the internal note representation which uses flats, to the 
-#' notation commonly used to write scales and chords, where a mix of sharps and 
-#' flats is used to avoid repeating the same letter note. 
+#' Converts the internal note representation which uses flats, to the
+#' notation commonly used to write scales and chords, where a mix of sharps and
+#' flats is used to avoid repeating the same letter note.
 #' (e.g. \code{"G#5" "A5"}, instead of \code{"Ab5" "A5"})
 #' e.g. convert the C4 Lydian from:
 #' "C4"  "D4"  "E4"  "Gb4" "G4"  "A4"  "B4"  "C5"
@@ -115,12 +110,10 @@ strings <- function(x, sep = " ") {
 #'
 #' @param notes String, vector: Notes to format
 #' @examples
-#' formatNotation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
-#' @author E.D. Gennatas
+#' format_notation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
+#' @author EDG
 #' @export
-
-formatNotation <- function(notes) {
-
+format_notation <- function(notes) {
   note.letters <- LETTERS[seq(7)]
 
   fN <- function(notes) {
@@ -146,7 +139,9 @@ formatNotation <- function(notes) {
         octave <- substring(note.tochange, nchar(note.tochange))
         new.note.letter <-
           note.letters[which(note.letters == .notes[.change]) - 1]
-        if (length(new.note.letter) == 0) new.note.letter <- "G"
+        if (length(new.note.letter) == 0) {
+          new.note.letter <- "G"
+        }
         new.note <- paste0(new.note.letter, "#", octave)
         notes[.change] <- new.note
       }
@@ -156,5 +151,4 @@ formatNotation <- function(notes) {
   # Get letters
 
   fN(fN(notes))
-
-} # music::formatNotation
+} # music::format_notation
