@@ -23,8 +23,8 @@ build_progression(
 
 \item{play}{Logical: If TRUE, play scale using \link{play_progression}}
 
-\item{format_notation}{Logical: If TRUE, format notes to include both flats a
-nd sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to
+\item{format_notation}{Logical: If TRUE, format notes to include both flats and
+sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to
 c("F#4", "G4")}
 
 \item{...}{Additional arguments to be passed to \link{play_progression} if

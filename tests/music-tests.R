@@ -138,7 +138,7 @@ if (is_macos) {
   playNote("F5", plot = TRUE)
 }
 
-# Note distance ----
+# Note distance ----()
 noteDistance(strings("C4 Eb4 Gb4 Bb4"))
 
 # All together now ----

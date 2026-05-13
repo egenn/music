@@ -12,3 +12,4 @@ R/dev/
 .DS_Store
 ^.*.code-workspace
 ^Makefile$
+^.*\.Rcheck$

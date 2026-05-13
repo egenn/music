@@ -23,7 +23,7 @@ NULL
 #' @inheritParams build_scale
 #' @param formatNotation Logical: If TRUE, format notes to include both flats
 #' and sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4")
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 buildScale <- function(
   root,
@@ -52,7 +52,7 @@ buildScale <- function(
 #' @param formatNotation Logical: If TRUE, format notes to include both flats
 #' and sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to
 #' c("F#4", "G4")
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 buildChord <- function(
   root,
@@ -77,7 +77,7 @@ buildChord <- function(
 #' @param formatNotation Logical: If TRUE, format notes to include both flats a
 #' nd sharps to avoid repeating the same letter. e.g. convert c("Gb4", "G4") to
 #' c("F#4", "G4")
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 buildProgression <- function(
   root = "A4",
@@ -98,56 +98,56 @@ buildProgression <- function(
   )
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 formatNote <- function(...) {
   .Deprecated("format_note")
   format_note(...)
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 formatNotation <- function(...) {
   .Deprecated("format_notation")
   format_notation(...)
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 noteDistance <- function(...) {
   .Deprecated("note_distance")
   note_distance(...)
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 playWave <- function(...) {
   .Deprecated("play_wave")
   play_wave(...)
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 playFreq <- function(...) {
   .Deprecated("play_freq")
   play_freq(...)
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 playNote <- function(...) {
   .Deprecated("play_note")
   play_note(...)
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 playChord <- function(...) {
   .Deprecated("play_chord")
   play_chord(...)
 }
 
-#' @rdname myPackage-deprecated
+#' @rdname music-deprecated
 #' @export
 playProgression <- function(...) {
   .Deprecated("play_progression")
