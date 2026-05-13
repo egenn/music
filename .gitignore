@@ -4,6 +4,7 @@ __dev/
 .Rhistory
 .RData
 .Ruserdata
+/*.Rcheck/
 cran-comments.md
 CRAN-SUBMISSION
 .DS_Store
