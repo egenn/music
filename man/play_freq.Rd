@@ -38,7 +38,7 @@ Play frequency
 }
 \examples{
 \dontrun{
-play_freq(440)
+  play_freq(440)
 }
 }
 \author{

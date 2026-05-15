@@ -25,11 +25,11 @@ names(rt_pos) <- rt_notes
 #' @param default.octave Integer: If \code{note} is provided without octave
 #' number (e.g. "C"), default to this octave. Default = 4
 #'
-#' @examples
-#' note2freq(build_scale("B4", "minor"))
 #' @author EDG
 #' @export
-
+#'
+#' @examples
+#' note2freq(build_scale("B4", "minor"))
 note2freq <- function(
   note,
   tuning = c("12ET", "custom"),

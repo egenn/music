@@ -13,11 +13,11 @@
 
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' \dontrun{
-#' play_wave(freq2wave(440))
+#'   play_wave(freq2wave(440))
 #' }
-
 play_wave <- function(wave, sample.rate = 44100, plot = FALSE) {
   if (is.null(dim(wave))) {
     wave <- matrix(wave, ncol = 1)
@@ -52,11 +52,11 @@ play_wave <- function(wave, sample.rate = 44100, plot = FALSE) {
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' \dontrun{
-#' play_freq(440)
+#'   play_freq(440)
 #' }
-
 play_freq <- function(
   frequency,
   oscillator = "sine",
@@ -96,11 +96,11 @@ play_freq <- function(
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' \dontrun{
-#' play_note("B4")
+#'   play_note("B4")
 #' }
-
 play_note <- function(
   note,
   oscillator = "sine",
@@ -144,11 +144,11 @@ play_note <- function(
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' \dontrun{
-#' play_chord(build_chord("E4", "minor"))
+#'   play_chord(build_chord("E4", "minor"))
 #' }
-
 play_chord <- function(
   chord,
   type = c("harmonic", "ascending", "descending"),
@@ -199,11 +199,11 @@ play_chord <- function(
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' \dontrun{
-#' play_progression(build_progression("G4", "minor"))
+#'   play_progression(build_progression("G4", "minor"))
 #' }
-
 play_progression <- function(
   progression,
   oscillator = c("sine", "square", "saw", "triangle"),

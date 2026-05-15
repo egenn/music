@@ -2,7 +2,7 @@
 # ::music::
 # 2019- EDG rtemis.org
 
-#' Console piano plot for notes
+#' Console piano plot
 #'
 #' Build an ASCII plot of notes on a piano
 #'
@@ -11,11 +11,11 @@
 #' @param blackKey.col Color to use for black keys. Default = "white" for use
 #' on a dark terminal. Set to "black" for use on a light terminal.
 #'
+#' @author EDG
 #' @export
+#'
 #' @examples
 #' cplot_piano(build_scale("B4", "minor"))
-#' @author EDG
-
 cplot_piano <- function(
   notes = build_scale("C4", "minor"),
   blackKey.col = "white"

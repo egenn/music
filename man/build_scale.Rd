@@ -44,7 +44,7 @@ Build Scale / Mode
 build_scale("C4", "minor")
 build_scale("B4", "minor", descending = TRUE, plot = TRUE)
 \dontrun{
-build_scale("B4", "minor", descending = TRUE, play = TRUE, plot = TRUE)
+  build_scale("B4", "minor", descending = TRUE, play = TRUE, plot = TRUE)
 }
 }
 \author{

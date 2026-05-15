@@ -37,7 +37,7 @@ Build Chord Progression
 build_progression("C4", "minor")
 build_progression("Bb4", "major")
 \dontrun{
-build_progression("Bb4", "major", play = TRUE, plot = TRUE)
+  build_progression("Bb4", "major", play = TRUE, plot = TRUE)
 }
 }
 \author{

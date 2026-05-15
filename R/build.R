@@ -53,13 +53,13 @@ scaleSteps <- list(
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' build_scale("C4", "minor")
 #' build_scale("B4", "minor", descending = TRUE, plot = TRUE)
 #' \dontrun{
-#' build_scale("B4", "minor", descending = TRUE, play = TRUE, plot = TRUE)
+#'   build_scale("B4", "minor", descending = TRUE, play = TRUE, plot = TRUE)
 #' }
-
 build_scale <- function(
   root,
   scale = "minor",
@@ -167,13 +167,13 @@ chords <- list()
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' build_chord("C4", "minor")
 #' build_chord("A4", "sus2", plot = TRUE)
 #' \dontrun{
-#' build_chord("B4", "sus2", play = TRUE)
+#'   build_chord("B4", "sus2", play = TRUE)
 #' }
-
 build_chord <- function(
   root,
   chord = "minor",
@@ -241,13 +241,13 @@ chordProgression <- list(
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' build_progression("C4", "minor")
 #' build_progression("Bb4", "major")
 #' \dontrun{
-#' build_progression("Bb4", "major", play = TRUE, plot = TRUE)
+#'   build_progression("Bb4", "major", play = TRUE, plot = TRUE)
 #' }
-
 build_progression <- function(
   root = "A4",
   scale = "minor",

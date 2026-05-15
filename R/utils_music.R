@@ -1,4 +1,4 @@
-# music_fn.R
+# utils_music.R
 # ::music::
 # 2019- EDG rtemis.org
 
@@ -14,10 +14,11 @@
 #' @param default.octave Integer: Octave to use if missing in \code{notes}.
 #' Default = 4; i.e. \code{"C"} becomes \code{"C4"}
 #'
-#' @examples
-#' format_note(c("D#4", "Ebb"))
 #' @author EDG
 #' @export
+#'
+#' @examples
+#' format_note(c("D#4", "Ebb"))
 format_note <- function(notes, default.octave = 4) {
   if (all(nchar(notes) == 1)) {
     notes <- toupper(notes)
@@ -58,10 +59,12 @@ format_note <- function(notes, default.octave = 4) {
 #'
 #' @return Vector of length \code{length(notes)} with semitone distances
 #' between successive notes
-#' @examples
-#' note_distance(strings("C4 Eb4 Gb4 Bb4"))
+#'
 #' @author EDG
 #' @export
+#'
+#' @examples
+#' note_distance(strings("C4 Eb4 Gb4 Bb4"))
 
 note_distance <- function(notes) {
   notes <- format_note(notes)
@@ -83,10 +86,12 @@ note_distance <- function(notes) {
 #' e.g. \code{"C4 Eb4 G4 D5"}
 #' @param sep String: the character that separates notes in \code{x}.
 #' Default = " "
-#' @examples
-#' strings("C4 Eb4 Gb4 Bb4")
+#'
 #' @author EDG
 #' @export
+#'
+#' @examples
+#' strings("C4 Eb4 Gb4 Bb4")
 
 strings <- function(x, sep = " ") {
   strsplit(x, split = sep)[[1]]
@@ -109,10 +114,12 @@ strings <- function(x, sep = " ") {
 #' "A4"  "B4"  "C#5" "D5"  "E5"  "F#5" "G#5" "A5"
 #'
 #' @param notes String, vector: Notes to format
-#' @examples
-#' format_notation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
+#'
 #' @author EDG
 #' @export
+#'
+#' @examples
+#' format_notation(c("Db4", "D4", "E4", "Gb4", "G4", "A4", "B4", "C5"))
 format_notation <- function(notes) {
   note.letters <- LETTERS[seq(7)]
 

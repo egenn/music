@@ -10,9 +10,9 @@
 #'
 #' @author EDG
 #' @export
+#'
 #' @examples
 #' wave <- freq2wave(note2freq(build_chord("A4", "sus2")))
-
 freq2wave <- function(
   frequency,
   oscillator = c("sine", "square", "saw", "triangle"),

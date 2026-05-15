@@ -49,7 +49,7 @@ Play Chord
 }
 \examples{
 \dontrun{
-play_chord(build_chord("E4", "minor"))
+  play_chord(build_chord("E4", "minor"))
 }
 }
 \author{

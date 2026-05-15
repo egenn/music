@@ -2,7 +2,7 @@
 % Please edit documentation in R/cplot_piano.R
 \name{cplot_piano}
 \alias{cplot_piano}
-\title{Console piano plot for notes}
+\title{Console piano plot}
 \usage{
 cplot_piano(notes = build_scale("C4", "minor"), blackKey.col = "white")
 }

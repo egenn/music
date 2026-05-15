@@ -25,7 +25,6 @@
 #'
 #' @examples
 #' delay_time(120, "1/8")
-
 delay_time <- function(
   bpm = 120,
   note = c(

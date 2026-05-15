@@ -19,7 +19,7 @@ Play one or more waveforms at the same time using \code{audio::play}
 }
 \examples{
 \dontrun{
-play_wave(freq2wave(440))
+  play_wave(freq2wave(440))
 }
 }
 \author{

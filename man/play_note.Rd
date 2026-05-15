@@ -46,7 +46,7 @@ Play Note
 }
 \examples{
 \dontrun{
-play_note("B4")
+  play_note("B4")
 }
 }
 \author{

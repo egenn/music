@@ -36,7 +36,7 @@ Build Chord
 build_chord("C4", "minor")
 build_chord("A4", "sus2", plot = TRUE)
 \dontrun{
-build_chord("B4", "sus2", play = TRUE)
+  build_chord("B4", "sus2", play = TRUE)
 }
 }
 \author{

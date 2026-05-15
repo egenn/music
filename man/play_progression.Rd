@@ -46,7 +46,7 @@ Play Progression
 }
 \examples{
 \dontrun{
-play_progression(build_progression("G4", "minor"))
+  play_progression(build_progression("G4", "minor"))
 }
 }
 \author{
